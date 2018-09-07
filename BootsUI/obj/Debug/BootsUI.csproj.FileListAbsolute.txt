@@ -1,0 +1,7 @@
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\Debug\BootsUI.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\Debug\BootsUI.BDialogHaupt.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\Debug\BootsUI.Suche.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\Debug\BootsUI.BDialogSucheAusgabe.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\Debug\BootsUI.BDialogVerkaufen.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\Debug\BootsUI.csproj.GenerateResource.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\Debug\BootsUI.csproj.CoreCompileInputs.cache

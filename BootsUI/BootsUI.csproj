@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9FD0ABF2-3314-4EB9-936B-27D317A6D802}</ProjectGuid>
+    <ProjectGuid>{8FFD72BD-33CD-4202-B112-34BC9D6FE807}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BootsmarktED</RootNamespace>
-    <AssemblyName>BootsmarktED</AssemblyName>
+    <RootNamespace>BootsUI</RootNamespace>
+    <AssemblyName>BootsUI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,34 +44,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings1.settings</DependentUpon>
+    <Compile Include="BDialogHaupt.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BDialogHaupt.Designer.cs">
+      <DependentUpon>BDialogHaupt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BDialogSuche.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDialogSuche.Designer.cs">
+      <DependentUpon>BDialogSuche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BDialogSucheAusgabe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDialogSucheAusgabe.Designer.cs">
+      <DependentUpon>BDialogSucheAusgabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BDialogVerkaufen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDialogVerkaufen.Designer.cs">
+      <DependentUpon>BDialogVerkaufen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BFactoryBDialogHaupt.cs" />
+    <Compile Include="INFactoryIDialogHaupt.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Properties\Settings1.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BootsDaten\BootsDaten.csproj">
-      <Project>{4eb51d9b-712d-4ecc-a2a2-4a34c33c862e}</Project>
-      <Name>BootsDaten</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BootsLogik\BootsLogik.csproj">
       <Project>{10cc0d2e-bb3d-4321-ae3b-893b0d0eb7bf}</Project>
       <Name>BootsLogik</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BootsUI\BootsUI.csproj">
-      <Project>{8ffd72bd-33cd-4202-b112-34bc9d6fe807}</Project>
-      <Name>BootsUI</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BDialogHaupt.resx">
+      <DependentUpon>BDialogHaupt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BDialogSuche.resx">
+      <DependentUpon>BDialogSuche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BDialogSucheAusgabe.resx">
+      <DependentUpon>BDialogSucheAusgabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BDialogVerkaufen.resx">
+      <DependentUpon>BDialogVerkaufen.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
