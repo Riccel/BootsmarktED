@@ -8,6 +8,7 @@ namespace BootsLogik
         private INDaten _iData;
         private INDatenVerb _iDataCon;
         private INDatenAbr _iDataDis;
+        //private INBoot _iBoot;
 
         #endregion
 

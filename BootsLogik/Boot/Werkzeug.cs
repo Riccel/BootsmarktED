@@ -1,6 +1,4 @@
-﻿
-
-namespace BootsLogik.Boot
+﻿namespace BootsLogik.Boot
 {
     public class Werkzeug
     {

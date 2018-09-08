@@ -1,6 +1,4 @@
-﻿
-
-namespace BootsLogik
+﻿namespace BootsLogik
 {
     public interface INFactoryILogik
     {

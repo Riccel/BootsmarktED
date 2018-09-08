@@ -42,7 +42,7 @@ namespace BootsmarktED
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             new Program().Run();
-            //  Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
