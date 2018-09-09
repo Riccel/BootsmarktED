@@ -51,12 +51,17 @@
             this.comboBoxLiegeplatz.TabIndex = 35;
             // 
             // comboBoxMarke
-            // 
+            //
+            this.comboBoxMarke.Items.AddRange(new object[] {
+            "Typhoon",
+            "Porsche",
+            "BMW"});
             this.comboBoxMarke.FormattingEnabled = true;
             this.comboBoxMarke.Location = new System.Drawing.Point(188, 228);
             this.comboBoxMarke.Name = "comboBoxMarke";
             this.comboBoxMarke.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMarke.TabIndex = 34;
+            this.comboBoxMarke.SelectedIndexChanged += new System.EventHandler(this.comboBoxMarke_SelectedIndexChanged);
             // 
             // comboBoxBaujahr
             // 
@@ -134,6 +139,7 @@
             this.button2Abbrechen.TabIndex = 26;
             this.button2Abbrechen.Text = "Abbrechen";
             this.button2Abbrechen.UseVisualStyleBackColor = true;
+            this.button2Abbrechen.Click += new System.EventHandler(this.button2Abbrechen_Click);
             // 
             // button1Verkaufen
             // 
@@ -143,6 +149,7 @@
             this.button1Verkaufen.TabIndex = 25;
             this.button1Verkaufen.Text = "Verkaufen";
             this.button1Verkaufen.UseVisualStyleBackColor = true;
+            this.button1Verkaufen.Click += new System.EventHandler(this.button1Verkaufen_Click);
             // 
             // BDialogVerkaufen
             // 
@@ -163,6 +170,7 @@
             this.Controls.Add(this.button1Verkaufen);
             this.Name = "BDialogVerkaufen";
             this.Text = "Was wollen Sie verkaufen?";
+            this.Load += new System.EventHandler(this.BDialogVerkaufen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

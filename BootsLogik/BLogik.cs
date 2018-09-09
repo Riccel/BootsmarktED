@@ -46,7 +46,9 @@ namespace BootsLogik
         #region Interface INLogikVerkaufen Methods
         public void InsertBoot(INBoot iBoot)
         {
+            
             _iDataDis.InsertBoot(iBoot);
+            
         }
         #endregion
     }

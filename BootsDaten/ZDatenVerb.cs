@@ -67,7 +67,7 @@ namespace BootsDaten
         protected virtual void DbCommandCountBoote(DbCommand dbCommand)
         {
             dbCommand.CommandText =
-                 @"SELECT COUNT(*) FROM BootTable";
+                 @"SELECT COUNT(*) FROM Boote";
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
         }
@@ -75,7 +75,7 @@ namespace BootsDaten
         protected virtual void DbCommandGetMarke(DbCommand dbCommand)
         {
             dbCommand.CommandText =
-                 @"SELECT DISTINCT Marke FROM BootTable ORDER BY Marke";
+                 @"SELECT DISTINCT Marke FROM Boote ORDER BY Marke";
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
         }
@@ -83,11 +83,11 @@ namespace BootsDaten
         protected virtual void DbCommandGetMaterial(string marke, DbCommand dbCommand)
         {
             dbCommand.CommandText =
-                @"SELECT DISTINCT Material FROM BootTable WHERE Marke = [pMarke] ORDER BY Material";
+                @"SELECT DISTINCT Material FROM Boote WHERE Marke = [Marke] ORDER BY Material";
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
             DbParameter dbParameter = _aData.ProviderFactory.CreateParameter();
-            dbParameter.ParameterName = "pMarke";
+            dbParameter.ParameterName = "Marke";
             dbParameter.Value = marke;
             dbCommand.Parameters.Add(dbParameter);
         }

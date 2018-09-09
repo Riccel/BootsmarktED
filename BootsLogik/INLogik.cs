@@ -17,6 +17,8 @@ namespace BootsLogik
 
     public interface INLogikVerkaufen
     {
+       
         void InsertBoot(INBoot iBoot);
+
     }
 }

@@ -20,4 +20,6 @@ namespace BootsLogik
         void SelectBoot(INBoot iBoot, ref DataTable dataTable);
         void InsertBoot(INBoot iBoot);
     }
+
+    
 }

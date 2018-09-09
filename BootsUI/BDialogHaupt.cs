@@ -48,6 +48,7 @@ namespace BootsUI
             _dialogSucheAusgabe = new BDialogSucheAusgabe(this);
             _dialogVerkaufen = new BDialogVerkaufen(iLogik, this);
         }
+        
         #endregion
 
 
@@ -64,43 +65,14 @@ namespace BootsUI
 
         #region Events
 
-        public BDialogHaupt(object sender, EventArgs e)
+        private void BDialogHaupt_Load(object sender, EventArgs e)
         {
             this.Init();
-            //this.labelBooteZaehlen.Text = _nBoote.ToString() + "Treffer";
+            this.label1BooteZaehlen.Text = _nBoote.ToString() + " Treffer";
 
 
             InitializeComponent();
         }
-
-        /*private void suche_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = _dialogSuche.ShowDialog();
-            DataTable dataTable = new DataTable();
-            if (dialogResult == DialogResult.OK)
-            {
-                // Suchen ausführen
-                _iLogikSuche.SelectBoot(_iBoot, ref dataTable);
-                // Ergebnis in DialogSearchView darstellen
-                if (_dialogSucheAusgabe is BDialogSucheAusgabe)
-                {
-                    // Down Cast
-                    (_dialogSucheAusgabe as BDialogSucheAusgabe).ResultTable = dataTable;
-                }
-                dialogResult = _dialogSucheAusgabe.ShowDialog();
-            }
-        }*/
-
-        /*private void verkaufen_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = _dialogVerkaufen.ShowDialog();
-            DataTable dataTable = new DataTable();
-            if (dialogResult == DialogResult.OK)
-            {
-                // Einfügen ausführen
-                _iLogikVerkaufen.InsertBoot(_iBoot);
-            }
-        }*/
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -116,7 +88,7 @@ namespace BootsUI
 
 
         // Suchen Button
-        private void button1_Click(object sender, EventArgs e)
+        private void button1Suchen_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = _dialogSuche.ShowDialog();
             DataTable dataTable = new DataTable();
@@ -136,7 +108,7 @@ namespace BootsUI
 
 
         // Verkaufen Button
-        private void button2_Click(object sender, EventArgs e)
+        private void button2Verkaufen_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = _dialogVerkaufen.ShowDialog();
             DataTable dataTable = new DataTable();

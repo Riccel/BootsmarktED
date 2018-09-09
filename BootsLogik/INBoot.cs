@@ -9,6 +9,6 @@ namespace BootsLogik
         int Baujahr { get; set; }
         double Preis { get; set; }
         string Material { get; set; }
-        void AddNewDataRow(DataTable dataTable);
+        void UpdateDataRow(DataTable dataTable);
     }
 }

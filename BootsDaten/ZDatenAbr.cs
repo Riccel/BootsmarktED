@@ -19,29 +19,87 @@ namespace BootsDaten
             _aData = aData;
             _dbConnection = aData.Connection;
         }
+
+
         #endregion
+
+
+
 
         public virtual void InsertBoot(INBoot iBoot)
         {
-            DbDataAdapter dbDataAdapter = this.CreateDbDataAdapter("BootTable");
+            DbDataAdapter dbDataAdapter = this.CreateDbDataAdapter("Boote");
             DataTable dataTable = this.GetSchema(dbDataAdapter);
-            iBoot.AddNewDataRow(dataTable);
+            DbCommand dbCommand = dbDataAdapter.SelectCommand;
+            this.DbCommandInsertBoot(iBoot, dbCommand);
+            int n = dbDataAdapter.Fill(dataTable);
+            //dbDataAdapter.Fill(dataTable);
+            iBoot.UpdateDataRow(dataTable);
+            dbDataAdapter.Update(dataTable);
+
         }
+
+
+
+        protected virtual void DbCommandInsertBoot(INBoot iBoot, DbCommand dbCommand)
+        {
+
+            dbCommand.CommandType = CommandType.Text;
+            dbCommand.Parameters.Clear();
+            dbCommand.CommandText = @"SELECT * FROM Boote WHERE 1 ";
+
+            if (iBoot.Marke != "null")
+            {
+                dbCommand.CommandText += " AND Marke = [pMarke]";
+                this.AddParameter(dbCommand, "pMake", iBoot.Marke);
+            }
+            if (iBoot.Material != "Null")
+            {
+                dbCommand.CommandText += " AND Material = [pMaterial]";
+                this.AddParameter(dbCommand, "pMaterial", iBoot.Material);
+            }
+
+            dbCommand.CommandText += " AND Preis <= [pPreis]";
+            this.AddParameter(dbCommand, "pPreis", iBoot.Preis);
+
+            dbCommand.CommandText += " AND Baujahr >= [pBaujahr]";
+            this.AddParameter(dbCommand, "pBaujahr", iBoot.Baujahr);
+
+            dbCommand.CommandText += " AND LIEGEPLATZ <= [pLiegeplatz]";
+            this.AddParameter(dbCommand, "pLiegeplatz", iBoot.Liegeplatz);
+
+            dbCommand.CommandText += " ORDER BY Preis";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void SelectBoot(INBoot iBoot, ref DataTable dataTable)
         {
-            DbDataAdapter dbDataAdapter = this.CreateDbDataAdapter("BootTable");
+            DbDataAdapter dbDataAdapter = this.CreateDbDataAdapter("Boote");
             DbCommand dbCommand = dbDataAdapter.SelectCommand;
             this.DbCommandSelectBoot(iBoot, dbCommand);
             dbDataAdapter.Fill(dataTable);
         }
 
+        
         protected virtual void DbCommandSelectBoot(INBoot iBoot, DbCommand dbCommand)
         {
 
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
-            dbCommand.CommandText = @"SELECT * FROM BootTable";
+            dbCommand.CommandText = @"SELECT * FROM Boote";
 
             if (iBoot.Marke != "Alle")
             {
@@ -152,7 +210,7 @@ namespace BootsDaten
             }
             catch (Exception exception)
             {
-                string message = string.Format("ADatabase.GetSchema() {0} fails\n") + exception.Message;
+                string message = string.Format("ADatabase.GetSchema() fails\n") + exception.Message;
                 throw new Exception(message);
             }
         }

@@ -64,21 +64,21 @@ namespace BootsUI
 
 
         // Abbrechen
-        private void buttonAbbrechen_Click(object sender, EventArgs e)
+        private void button2Abbrechen_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
         // Suchen drücken
-        private void buttonSuche_Click(object sender, EventArgs e)
+        private void button1Suchen_Click(object sender, EventArgs e)
         {
             INBoot iBoot = _dialogHaupt.Boot;
             iBoot.Marke = this.comboBoxMarke.Text;
-            //iBoot.Material = this.comboBoxMaterial.Text;
-            //iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxPreis.Text, 999999);
+            iBoot.Material = this.comboBoxMaterial.Text;
+            iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxPreis.Text, 999999);
             iBoot.Baujahr = Werkzeug.ParseInt(this.comboBoxBaujahr.Text, 1950);
-            //iBoot.Liegeplatz = Werkzeug.ParseInt(this.comboBoxLiegeplatz.Text, 999999);
+            iBoot.Liegeplatz = this.comboBoxLiegeplatz.Text;
 
             this.DialogResult = DialogResult.OK;
             this.Close();

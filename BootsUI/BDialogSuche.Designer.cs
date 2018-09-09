@@ -44,23 +44,60 @@
             // 
             // comboBoxLiegeplatz
             // 
+            this.comboBoxLiegeplatz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLiegeplatz.FormattingEnabled = true;
+            this.comboBoxLiegeplatz.Items.AddRange(new object[] {
+            "Bremerhaven",
+            "Hamburg",
+            "Rügen",
+            "SanktPeter Ording",
+            "Norden",
+            "Hiddensee",
+            "Cuxhaven",
+            "Kiel",
+            "Rostock"});
             this.comboBoxLiegeplatz.Location = new System.Drawing.Point(188, 141);
             this.comboBoxLiegeplatz.Name = "comboBoxLiegeplatz";
             this.comboBoxLiegeplatz.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLiegeplatz.TabIndex = 23;
             // 
             // comboBoxMarke
-            // 
+            //
+            this.comboBoxMarke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMarke.FormattingEnabled = true;
+            this.comboBoxMarke.Items.AddRange(new object[] {
+            "Typhoon",
+            "Porsche",
+            "BMW"});
             this.comboBoxMarke.FormattingEnabled = true;
             this.comboBoxMarke.Location = new System.Drawing.Point(188, 228);
             this.comboBoxMarke.Name = "comboBoxMarke";
             this.comboBoxMarke.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMarke.TabIndex = 22;
+            this.comboBoxMarke.SelectedIndexChanged += new System.EventHandler(this.comboBoxMarke_SelectedIndexChanged);
             // 
             // comboBoxBaujahr
-            // 
+            //
+            this.comboBoxBaujahr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBaujahr.FormattingEnabled = true;
+            this.comboBoxBaujahr.Items.AddRange(new object[] {
+            "ab",
+            "1980",
+            "1985",
+            "1990",
+            "1995",
+            "2000",
+            "2002",
+            "2004",
+            "2002",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017"});
             this.comboBoxBaujahr.Location = new System.Drawing.Point(494, 67);
             this.comboBoxBaujahr.Name = "comboBoxBaujahr";
             this.comboBoxBaujahr.Size = new System.Drawing.Size(121, 21);
@@ -68,14 +105,47 @@
             // 
             // comboBoxPreis
             // 
+            this.comboBoxPreis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPreis.FormattingEnabled = true;
+            this.comboBoxPreis.Items.AddRange(new object[] {
+            "bis",
+            "500",
+            "1.000",
+            "1.500",
+            "2.000",
+            "2.500",
+            "3.000",
+            "4.000",
+            "5.000",
+            "6.000",
+            "7.000",
+            "8.000",
+            "9.000",
+            "10.000",
+            "12.500",
+            "15.000",
+            "17.500",
+            "20.000",
+            "25.000",
+            "30.000",
+            "40.000",
+            "50.000",
+            "100.000"});
             this.comboBoxPreis.Location = new System.Drawing.Point(494, 141);
             this.comboBoxPreis.Name = "comboBoxPreis";
             this.comboBoxPreis.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPreis.TabIndex = 20;
             // 
             // comboBoxMaterial
-            // 
+            //
+            this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaterial.FormattingEnabled = true;
+            this.comboBoxMaterial.Items.AddRange(new object[] {
+            "GFK",
+            "Holz",
+            });
+            this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaterial.FormattingEnabled = true;
             this.comboBoxMaterial.Location = new System.Drawing.Point(494, 228);
             this.comboBoxMaterial.Name = "comboBoxMaterial";
             this.comboBoxMaterial.Size = new System.Drawing.Size(121, 21);
@@ -134,6 +204,7 @@
             this.button2Abbrechen.TabIndex = 14;
             this.button2Abbrechen.Text = "Abbrechen";
             this.button2Abbrechen.UseVisualStyleBackColor = true;
+            this.button2Abbrechen.Click += new System.EventHandler(this.button2Abbrechen_Click);
             // 
             // button1Suchen
             // 
@@ -143,6 +214,7 @@
             this.button1Suchen.TabIndex = 13;
             this.button1Suchen.Text = "Suchen";
             this.button1Suchen.UseVisualStyleBackColor = true;
+            this.button1Suchen.Click += new System.EventHandler(this.button1Suchen_Click);
             // 
             // BDialogSuche
             // 

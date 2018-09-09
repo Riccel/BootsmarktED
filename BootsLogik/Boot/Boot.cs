@@ -16,17 +16,17 @@ namespace BootsLogik.Boot
             Baujahr = dateTime.Year;
         }
 
-        public void AddNewDataRow(DataTable dataTable)
+        public void UpdateDataRow(DataTable dataTable)
         {
 
             DataRow dataRow = dataTable.NewRow();
-            dataRow["pkGUID"] = Werkzeug.CreateGUID();
-            dataRow["Make"] = Marke;
-            dataRow["Model"] = Material;
-            dataRow["Price"] = Preis;
-            dataRow["Registration"] = Baujahr;
-            dataRow["Mileage"] = Liegeplatz;
-            dataRow["fkSeller"] = -1;
+            dataRow["ID"] = Werkzeug.CreateID();
+            dataRow["Marke"] = Marke;
+            dataRow["Material"] = Material;
+            dataRow["Preis"] = Preis;
+            dataRow["Baujahr"] = Baujahr;
+            dataRow["Liegeplatz"] = Liegeplatz;
+            //dataRow["fkSeller"] = -1;
 
             dataTable.Rows.Add(dataRow); // DataRow der Tabelle hinzufügen
                                          // RowState steht auf RowState.Added

@@ -1,4 +1,6 @@
-﻿namespace BootsDaten.Datenbankzugang
+﻿using BootsLogik;
+
+namespace BootsDaten.Datenbankzugang
 {
     internal class ZDatenVerbindung : ZDaten
     {
@@ -7,7 +9,7 @@
             : base()
         {
             _connectionString = connectionString;
-            _providerString = "System.Data.OleDb";
+            _providerString = "System.Data.OLEDB";
             this.Setup();
 
             _iDataCon = new ZDatenVerbZugang(this);

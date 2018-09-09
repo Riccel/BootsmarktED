@@ -28,39 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BDialogHaupt));
+            this.button4FAQ = new System.Windows.Forms.Button();
+            this.button3Konto = new System.Windows.Forms.Button();
+            this.button2Verkaufen = new System.Windows.Forms.Button();
             this.button1Suche = new System.Windows.Forms.Button();
+            this.label1BooteZaehlen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button4
+            // button4FAQ
             // 
-            this.button4.Location = new System.Drawing.Point(255, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "FAQ";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4FAQ.Location = new System.Drawing.Point(255, 12);
+            this.button4FAQ.Name = "button4FAQ";
+            this.button4FAQ.Size = new System.Drawing.Size(75, 23);
+            this.button4FAQ.TabIndex = 7;
+            this.button4FAQ.Text = "FAQ";
+            this.button4FAQ.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button3Konto
             // 
-            this.button3.Location = new System.Drawing.Point(174, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Konto";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3Konto.Location = new System.Drawing.Point(174, 12);
+            this.button3Konto.Name = "button3Konto";
+            this.button3Konto.Size = new System.Drawing.Size(75, 23);
+            this.button3Konto.TabIndex = 6;
+            this.button3Konto.Text = "Konto";
+            this.button3Konto.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button2Verkaufen
             // 
-            this.button2.Location = new System.Drawing.Point(93, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Verkaufen";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2Verkaufen.Location = new System.Drawing.Point(93, 12);
+            this.button2Verkaufen.Name = "button2Verkaufen";
+            this.button2Verkaufen.Size = new System.Drawing.Size(75, 23);
+            this.button2Verkaufen.TabIndex = 5;
+            this.button2Verkaufen.Text = "Verkaufen";
+            this.button2Verkaufen.UseVisualStyleBackColor = true;
+            this.button2Verkaufen.Click += new System.EventHandler(this.button2Verkaufen_Click);
             // 
             // button1Suche
             // 
@@ -70,28 +72,41 @@
             this.button1Suche.TabIndex = 4;
             this.button1Suche.Text = "Suche";
             this.button1Suche.UseVisualStyleBackColor = true;
-            this.button1Suche.Click += new System.EventHandler(this.button1_Click);
+            this.button1Suche.Click += new System.EventHandler(this.button1Suchen_Click);
+            // 
+            // label1BooteZaehlen
+            // 
+            this.label1BooteZaehlen.AutoSize = true;
+            this.label1BooteZaehlen.Location = new System.Drawing.Point(22, 392);
+            this.label1BooteZaehlen.Name = "label1BooteZaehlen";
+            this.label1BooteZaehlen.Size = new System.Drawing.Size(47, 13);
+            this.label1BooteZaehlen.TabIndex = 8;
+            this.label1BooteZaehlen.Text = "0 Treffer";
             // 
             // BDialogHaupt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label1BooteZaehlen);
+            this.Controls.Add(this.button4FAQ);
+            this.Controls.Add(this.button3Konto);
+            this.Controls.Add(this.button2Verkaufen);
             this.Controls.Add(this.button1Suche);
             this.Name = "BDialogHaupt";
-            this.Text = "BDialogHaupt";
+            this.Text = "Startseite";
+            this.Load += new System.EventHandler(this.BDialogHaupt_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4FAQ;
+        private System.Windows.Forms.Button button3Konto;
+        private System.Windows.Forms.Button button2Verkaufen;
         private System.Windows.Forms.Button button1Suche;
+        private System.Windows.Forms.Label label1BooteZaehlen;
     }
 }

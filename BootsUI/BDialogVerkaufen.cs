@@ -53,20 +53,26 @@ namespace BootsUI
             comboBoxMaterial.Text = comboBoxMaterial.Items[0].ToString();
         }
 
-        private void buttonVerkaufen_Click(object sender, EventArgs e)
+        private void button1Verkaufen_Click(object sender, EventArgs e)
         {
             INBoot iBoot = _dialogHaupt.Boot;
             iBoot.Marke = this.comboBoxMarke.Text;
-            //iBoot.Material = this.comboBoxMaterial.Text;
-            //iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxBoxPreis.Text, 0);
-            iBoot.Baujahr = Werkzeug.ParseInt(this.comboBoxBaujahr.Text, 0);
-            //iBoot.Liegeplatz = Werkzeug.ParseInt(this.comboBoxLiegeplatz.Text, 0);
+            iBoot.Material = this.comboBoxMaterial.Text;
+            iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxPreis.Text, 99999);
+            iBoot.Baujahr = Werkzeug.ParseInt(this.comboBoxBaujahr.Text, 9999);
+            iBoot.Liegeplatz = this.comboBoxLiegeplatz.Text;
 
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+
         #endregion
 
-
+        private void button2Abbrechen_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
