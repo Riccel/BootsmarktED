@@ -1,0 +1,16 @@
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.Suche.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogSucheAusgabe.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogVerkaufen.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.csproj.GenerateResource.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.csprojAssemblyReference.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\bin\x86\Debug\BootsUI.dll.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\bin\x86\Debug\BootsUI.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\bin\x86\Debug\BootsUI.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\bin\x86\Debug\BootsLogik.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\bin\x86\Debug\BootsLogik.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\bin\x86\Debug\BootsLogik.dll.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.csproj.CopyComplete
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogHaupt.resources

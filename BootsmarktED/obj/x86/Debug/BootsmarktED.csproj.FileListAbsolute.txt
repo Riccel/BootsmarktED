@@ -1,0 +1,17 @@
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\obj\x86\Debug\BootsmarktED.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\obj\x86\Debug\BootsmarktED.csprojAssemblyReference.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsmarktED.exe.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsmarktED.exe
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsmarktED.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsDaten.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsLogik.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsUI.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsDaten.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsDaten.dll.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsLogik.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsLogik.dll.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsUI.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\bin\x86\Debug\BootsUI.dll.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\obj\x86\Debug\BootsmarktED.csproj.CopyComplete
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\obj\x86\Debug\BootsmarktED.exe
+C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\obj\x86\Debug\BootsmarktED.pdb

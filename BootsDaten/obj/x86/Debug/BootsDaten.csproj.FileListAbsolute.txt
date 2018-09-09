@@ -1,0 +1,11 @@
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\obj\x86\Debug\BootsDaten.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\bin\x86\Debug\BootsDaten.dll.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\bin\x86\Debug\BootsDaten.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\bin\x86\Debug\BootsDaten.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\bin\x86\Debug\BootsLogik.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\bin\x86\Debug\BootsLogik.pdb
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\bin\x86\Debug\BootsLogik.dll.config
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\obj\x86\Debug\BootsDaten.csprojAssemblyReference.cache
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\obj\x86\Debug\BootsDaten.csproj.CopyComplete
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\obj\x86\Debug\BootsDaten.dll
+C:\Users\Daniel\source\repos\BootsmarktED\BootsDaten\obj\x86\Debug\BootsDaten.pdb
