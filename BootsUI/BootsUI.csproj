@@ -126,6 +126,11 @@
     <Compile Include="BFactoryBDialogHaupt.cs" />
     <Compile Include="INFactoryIDialogHaupt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -149,12 +154,19 @@
     <EmbeddedResource Include="BDialogVerkaufen.resx">
       <DependentUpon>BDialogVerkaufen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BootsLogik\BootsLogik.csproj">
       <Project>{10cc0d2e-bb3d-4321-ae3b-893b0d0eb7bf}</Project>
       <Name>BootsLogik</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background image.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

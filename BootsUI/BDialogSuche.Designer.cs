@@ -40,6 +40,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2Abbrechen = new System.Windows.Forms.Button();
             this.button1Suchen = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxLiegeplatz
@@ -56,28 +61,27 @@
             "Cuxhaven",
             "Kiel",
             "Rostock"});
-            this.comboBoxLiegeplatz.Location = new System.Drawing.Point(188, 141);
+            this.comboBoxLiegeplatz.Location = new System.Drawing.Point(76, 284);
             this.comboBoxLiegeplatz.Name = "comboBoxLiegeplatz";
             this.comboBoxLiegeplatz.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLiegeplatz.TabIndex = 23;
             // 
             // comboBoxMarke
-            //
+            // 
             this.comboBoxMarke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMarke.FormattingEnabled = true;
             this.comboBoxMarke.Items.AddRange(new object[] {
             "Typhoon",
             "Porsche",
             "BMW"});
-            this.comboBoxMarke.FormattingEnabled = true;
-            this.comboBoxMarke.Location = new System.Drawing.Point(188, 228);
+            this.comboBoxMarke.Location = new System.Drawing.Point(76, 65);
             this.comboBoxMarke.Name = "comboBoxMarke";
             this.comboBoxMarke.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMarke.TabIndex = 22;
             this.comboBoxMarke.SelectedIndexChanged += new System.EventHandler(this.comboBoxMarke_SelectedIndexChanged);
             // 
             // comboBoxBaujahr
-            //
+            // 
             this.comboBoxBaujahr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBaujahr.FormattingEnabled = true;
             this.comboBoxBaujahr.Items.AddRange(new object[] {
@@ -98,7 +102,7 @@
             "2015",
             "2016",
             "2017"});
-            this.comboBoxBaujahr.Location = new System.Drawing.Point(494, 67);
+            this.comboBoxBaujahr.Location = new System.Drawing.Point(76, 117);
             this.comboBoxBaujahr.Name = "comboBoxBaujahr";
             this.comboBoxBaujahr.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBaujahr.TabIndex = 21;
@@ -131,22 +135,19 @@
             "40.000",
             "50.000",
             "100.000"});
-            this.comboBoxPreis.Location = new System.Drawing.Point(494, 141);
+            this.comboBoxPreis.Location = new System.Drawing.Point(76, 170);
             this.comboBoxPreis.Name = "comboBoxPreis";
             this.comboBoxPreis.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPreis.TabIndex = 20;
             // 
             // comboBoxMaterial
-            //
+            // 
             this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaterial.FormattingEnabled = true;
             this.comboBoxMaterial.Items.AddRange(new object[] {
             "GFK",
-            "Holz",
-            });
-            this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMaterial.FormattingEnabled = true;
-            this.comboBoxMaterial.Location = new System.Drawing.Point(494, 228);
+            "Holz"});
+            this.comboBoxMaterial.Location = new System.Drawing.Point(76, 224);
             this.comboBoxMaterial.Name = "comboBoxMaterial";
             this.comboBoxMaterial.Size = new System.Drawing.Size(121, 21);
             this.comboBoxMaterial.TabIndex = 24;
@@ -154,7 +155,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(494, 212);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(21, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 19;
@@ -163,7 +165,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(494, 125);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(21, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 18;
@@ -172,7 +175,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(494, 51);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(21, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 17;
@@ -181,7 +185,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(185, 125);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 287);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 16;
@@ -190,7 +195,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 212);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(21, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 15;
@@ -198,7 +204,7 @@
             // 
             // button2Abbrechen
             // 
-            this.button2Abbrechen.Location = new System.Drawing.Point(388, 376);
+            this.button2Abbrechen.Location = new System.Drawing.Point(24, 376);
             this.button2Abbrechen.Name = "button2Abbrechen";
             this.button2Abbrechen.Size = new System.Drawing.Size(75, 23);
             this.button2Abbrechen.TabIndex = 14;
@@ -208,7 +214,7 @@
             // 
             // button1Suchen
             // 
-            this.button1Suchen.Location = new System.Drawing.Point(494, 376);
+            this.button1Suchen.Location = new System.Drawing.Point(107, 376);
             this.button1Suchen.Name = "button1Suchen";
             this.button1Suchen.Size = new System.Drawing.Size(75, 23);
             this.button1Suchen.TabIndex = 13;
@@ -216,27 +222,60 @@
             this.button1Suchen.UseVisualStyleBackColor = true;
             this.button1Suchen.Click += new System.EventHandler(this.button1Suchen_Click);
             // 
-            // BDialogSuche
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.panel1.Controls.Add(this.comboBoxLiegeplatz);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.button1Suchen);
+            this.panel1.Controls.Add(this.button2Abbrechen);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.comboBoxMaterial);
+            this.panel1.Controls.Add(this.comboBoxPreis);
+            this.panel1.Controls.Add(this.comboBoxBaujahr);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.comboBoxMarke);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 449);
+            this.panel1.TabIndex = 9;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 53);
+            this.panel2.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(-3, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(203, 31);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Finde dein Boot";
+            // 
+            // Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBoxLiegeplatz);
-            this.Controls.Add(this.comboBoxMarke);
-            this.Controls.Add(this.comboBoxBaujahr);
-            this.Controls.Add(this.comboBoxPreis);
-            this.Controls.Add(this.comboBoxMaterial);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2Abbrechen);
-            this.Controls.Add(this.button1Suchen);
-            this.Name = "BDialogSuche";
+            this.BackgroundImage = global::BootsUI.Properties.Resources.background_image;
+            this.ClientSize = new System.Drawing.Size(869, 450);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "Suche";
             this.Text = "Suchen Sie hier Ihr Boot";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -254,5 +293,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2Abbrechen;
         private System.Windows.Forms.Button button1Suchen;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
     }
 }
