@@ -22,6 +22,7 @@
             return lUID;
         } 
 
+
         public static double ParseDouble(string s, double defaultValue)
         {
             double value;
@@ -44,5 +45,23 @@
             return value;
         }
 
+        
+        // Liegeplatz darf nicht Null oder leer sein
+        public static string LiegeplatzTest(string s)
+        {
+
+            if (string.IsNullOrWhiteSpace(s))
+            {
+                throw new System.Exception("(\"{0}\") ist entweder Null oder leer!");
+                //return "is null or empty";
+            }
+            else
+                return string.Format("(\"{0}\") ist entweder Null oder leer!", s);
+        }
+
+
+
     }
-}
+
+    }
+

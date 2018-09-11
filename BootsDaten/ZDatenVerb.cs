@@ -70,6 +70,7 @@ namespace BootsDaten
                  @"SELECT COUNT(*) FROM Boote";
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
+            
         }
 
         protected virtual void DbCommandGetMarke(DbCommand dbCommand)
@@ -143,8 +144,8 @@ namespace BootsDaten
             }
             catch (Exception exception)
             {
-                string sql = dbCommand.CommandText;
-                string message = string.Format("ADatabase.ExecuteQuery() {0} fails\n", sql) + exception.Message;
+                string access = dbCommand.CommandText;
+                string message = string.Format("ADatabase.ExecuteQuery() {0} fails\n", access) + exception.Message;
                 throw new Exception(message);
             }
         }

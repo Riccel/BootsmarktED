@@ -87,11 +87,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDialogFAQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDialogFAQ.Designer.cs">
+      <DependentUpon>BDialogFAQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="BDialogHaupt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BDialogHaupt.Designer.cs">
       <DependentUpon>BDialogHaupt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BDialogKonto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BDialogKonto.Designer.cs">
+      <DependentUpon>BDialogKonto.cs</DependentUpon>
     </Compile>
     <Compile Include="BDialogSuche.cs">
       <SubType>Form</SubType>
@@ -119,8 +131,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BDialogFAQ.resx">
+      <DependentUpon>BDialogFAQ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BDialogHaupt.resx">
       <DependentUpon>BDialogHaupt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BDialogKonto.resx">
+      <DependentUpon>BDialogKonto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BDialogSuche.resx">
       <DependentUpon>BDialogSuche.cs</DependentUpon>

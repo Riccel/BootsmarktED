@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BDialogHaupt));
             this.button4FAQ = new System.Windows.Forms.Button();
             this.button3Konto = new System.Windows.Forms.Button();
             this.button2Verkaufen = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.button4FAQ.TabIndex = 7;
             this.button4FAQ.Text = "FAQ";
             this.button4FAQ.UseVisualStyleBackColor = true;
+            this.button4FAQ.Click += new System.EventHandler(this.button4FAQ_Click);
             // 
             // button3Konto
             // 
@@ -53,6 +53,7 @@
             this.button3Konto.TabIndex = 6;
             this.button3Konto.Text = "Konto";
             this.button3Konto.UseVisualStyleBackColor = true;
+            this.button3Konto.Click += new System.EventHandler(this.button3Konto_Click);
             // 
             // button2Verkaufen
             // 

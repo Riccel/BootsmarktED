@@ -58,9 +58,9 @@ namespace BootsUI
             INBoot iBoot = _dialogHaupt.Boot;
             iBoot.Marke = this.comboBoxMarke.Text;
             iBoot.Material = this.comboBoxMaterial.Text;
-            iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxPreis.Text, 99999);
-            iBoot.Baujahr = Werkzeug.ParseInt(this.comboBoxBaujahr.Text, 9999);
-            iBoot.Liegeplatz = this.comboBoxLiegeplatz.Text;
+            iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxPreis.Text, 0);
+            iBoot.Baujahr = Werkzeug.ParseInt(this.comboBoxBaujahr.Text, 0);
+            iBoot.Liegeplatz = Werkzeug.LiegeplatzTest(this.comboBoxLiegeplatz.Text);
 
             this.DialogResult = DialogResult.OK;
             this.Close();

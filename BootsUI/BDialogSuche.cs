@@ -54,7 +54,7 @@ namespace BootsUI
             string marke = this.comboBoxMarke.Text;
             if (marke == "Alle") return;
 
-            // Alle Modelle des Herstellers aus der Datenbank lesen
+            // Alle Marken mit dem Material aus der Datenbank lesen
             comboBoxMaterial.Items.Clear();
             comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(marke));
             comboBoxMaterial.Items.Add("Alle");
@@ -67,6 +67,7 @@ namespace BootsUI
         private void button2Abbrechen_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+            
             this.Close();
         }
 

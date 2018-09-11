@@ -12,10 +12,16 @@ namespace BootsmarktED
         #region Fields
         // BootsUI
         private INDialog _iDialog;
-        // BootsLogic
+        private INDialogFAQ _iLogikFAQ;
+        private INDialogKonto _iLogikKonto;
+
+
+        // BootsLogik
         private INLogik _iLogik;
-        // BootsData
+        // BootsDaten
         private INDaten _iDbase;
+
+        
 
         
         #endregion
@@ -30,7 +36,7 @@ namespace BootsmarktED
             // Dependency Injection via Ctor
             _iDbase = new ZFactoryZDatenZugang().Create(connectionString);
             _iLogik = new BFactoryBLogik().Create(_iDbase);
-            _iDialog = new BFactoryBDialogHaupt().Create(_iLogik);
+            _iDialog = new BFactoryBDialogHaupt().Create(_iLogik,_iLogikFAQ,_iLogikKonto);
 
             // CDialogMain starten
             if (_iDialog is Form)
@@ -45,7 +51,7 @@ namespace BootsmarktED
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             new Programm().Run();
-            //Console.ReadKey();
+            
         }
     }
 }

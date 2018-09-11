@@ -6,6 +6,8 @@ namespace BootsLogik
     {
         INDatenAbr DataDis { get; }
         INDatenVerb DataCon { get; }
+
+        
     }
 
     public interface INDatenVerb
@@ -20,6 +22,8 @@ namespace BootsLogik
         void SelectBoot(INBoot iBoot, ref DataTable dataTable);
         void InsertBoot(INBoot iBoot);
     }
+
+    
 
     
 }

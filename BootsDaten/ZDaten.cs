@@ -4,6 +4,7 @@ using System.Data.Common;
 using BootsLogik;
 
 
+
 namespace BootsDaten
 {
     internal abstract class ZDaten : INDaten
@@ -12,11 +13,17 @@ namespace BootsDaten
         // Objektvariable        
         protected string _connectionString;
         protected string _providerString;
+
+        // Kompositionen
         protected DbProviderFactory _dbProviderFactory;
         protected DbConnection _dbConnection;
+        protected DbCommand _dbCommand;
+
+
         // Assoziationen
         protected INDatenVerb _iDataCon;
         protected INDatenAbr _iDataDis;
+
         #endregion
 
         #region Properties
@@ -30,34 +37,49 @@ namespace BootsDaten
         #region ctor
         internal ZDaten()
         {
+           
         }
         #endregion
 
 
-        #region interne Methoden
+        #region interface Methoden für INDaten
         internal virtual void Setup()
         {
             // preconditions
             if (_connectionString == string.Empty)
-                throw new NullReferenceException("ADbase.Create() ConnectionString is null");
+                throw new NullReferenceException("ZugangDbase.Create() ConnectionString ist Null");
             if (_providerString == string.Empty)
-                throw new NullReferenceException("ADbase.Create() ProviderString is null");
+                throw new NullReferenceException("ZugangDbase.Create() ProviderString ist Null");
 
             try
             {
-                // Create Provider Factory 
+                // Erstelle Provider Factory 
                 _dbProviderFactory = DbProviderFactories.GetFactory(_providerString); // Provider
-                // postcondition
+
+                // postcondition, wenn der Zugang zum Provider failt
                 if (_dbProviderFactory == null)
-                    throw new NullReferenceException("ADbase.Create() fails _dbProviderFactory is null");
-                // Create Connection
+                    throw new NullReferenceException("ZugangDbase.Create() fails _dbProviderFactory ist Null");
+
+                // Erstelle Verbindung
                 _dbConnection = _dbProviderFactory.CreateConnection();
-                // postcondition
+
+                // postcondition, wenn keine Verbindung hergestellt werden kann
                 if (_dbConnection == null)
-                    throw new NullReferenceException("ADbase.Create() fails _dbConnection is null");
+                    throw new NullReferenceException("ZugangDbase.Create() fails _dbConnection ist Null");
+
+                // Setze den ConnectionString
                 _dbConnection.ConnectionString = _connectionString;
 
-                // Test Connection
+                // Setup DbCommand objects
+                _dbCommand = _dbProviderFactory.CreateCommand();
+
+                // Dependency Injection via Setter
+                _dbCommand.Connection = _dbConnection; 
+                _dbCommand.CommandType = CommandType.Text;
+
+                
+
+                // Test Verbindung
                 if (_dbConnection.State != ConnectionState.Open)
                     _dbConnection.Open();
                 if (_dbConnection.State == ConnectionState.Open)
@@ -68,11 +90,17 @@ namespace BootsDaten
             catch (Exception exception)
             {
                 throw new DataException(
-                    string.Format("ADbase.Create() fails\nConnectionString:{0}\nProviderString:{1}\n{2}",
+                    string.Format("ZugangDbase.Create() fails\nConnectionString:{0}\nProviderString:{1}\n{2}",
                     _connectionString, _providerString, exception));
             }
         }
         #endregion
+
+        #region statische Methode
+        
+        #endregion
+
+
     }
 }
 

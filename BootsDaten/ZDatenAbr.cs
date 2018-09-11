@@ -33,7 +33,7 @@ namespace BootsDaten
             DbCommand dbCommand = dbDataAdapter.SelectCommand;
             this.DbCommandInsertBoot(iBoot, dbCommand);
             int n = dbDataAdapter.Fill(dataTable);
-            //dbDataAdapter.Fill(dataTable);
+            dbDataAdapter.Fill(dataTable);
             iBoot.UpdateDataRow(dataTable);
             dbDataAdapter.Update(dataTable);
 
@@ -44,29 +44,36 @@ namespace BootsDaten
         protected virtual void DbCommandInsertBoot(INBoot iBoot, DbCommand dbCommand)
         {
 
+
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
-            dbCommand.CommandText = @"SELECT * FROM Boote WHERE 1 ";
 
-            if (iBoot.Marke != "null")
+            dbCommand.CommandText = @"SELECT * FROM Boote WHERE 1";
+
+            if (iBoot.Marke != null)
             {
                 dbCommand.CommandText += " AND Marke = [pMarke]";
                 this.AddParameter(dbCommand, "pMake", iBoot.Marke);
             }
-            if (iBoot.Material != "Null")
+            if (iBoot.Material != null)
             {
                 dbCommand.CommandText += " AND Material = [pMaterial]";
                 this.AddParameter(dbCommand, "pMaterial", iBoot.Material);
             }
 
-            dbCommand.CommandText += " AND Preis <= [pPreis]";
-            this.AddParameter(dbCommand, "pPreis", iBoot.Preis);
+                // Nicht höher als 99999
+                dbCommand.CommandText += " AND Preis <= [pPreis]";
+                this.AddParameter(dbCommand, "pPreis", iBoot.Preis);
 
-            dbCommand.CommandText += " AND Baujahr >= [pBaujahr]";
-            this.AddParameter(dbCommand, "pBaujahr", iBoot.Baujahr);
-
-            dbCommand.CommandText += " AND LIEGEPLATZ <= [pLiegeplatz]";
-            this.AddParameter(dbCommand, "pLiegeplatz", iBoot.Liegeplatz);
+                // Ab 1950 beginnend
+                dbCommand.CommandText += " AND Baujahr >= [pBaujahr]";
+                this.AddParameter(dbCommand, "pBaujahr", iBoot.Baujahr);
+            
+            if (iBoot.Liegeplatz != null)
+            {
+                dbCommand.CommandText += " AND LIEGEPLATZ = [pLiegeplatz]";
+                this.AddParameter(dbCommand, "pLiegeplatz", iBoot.Liegeplatz);
+            }
 
             dbCommand.CommandText += " ORDER BY Preis";
         }
@@ -87,39 +94,56 @@ namespace BootsDaten
 
         public void SelectBoot(INBoot iBoot, ref DataTable dataTable)
         {
+            
             DbDataAdapter dbDataAdapter = this.CreateDbDataAdapter("Boote");
             DbCommand dbCommand = dbDataAdapter.SelectCommand;
             this.DbCommandSelectBoot(iBoot, dbCommand);
+            dbDataAdapter.SelectCommand = dbCommand;
+            int n = dbDataAdapter.Fill(dataTable);
+
+            
             dbDataAdapter.Fill(dataTable);
+            
+            iBoot.UpdateDataRow(dataTable);
+            dbDataAdapter.Update(dataTable);
         }
 
-        
+
+
+
+        #region Virtuelle Methoden
         protected virtual void DbCommandSelectBoot(INBoot iBoot, DbCommand dbCommand)
         {
 
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
-            dbCommand.CommandText = @"SELECT * FROM Boote";
+            dbCommand.CommandText = @"SELECT * FROM Boote WHERE 1";
 
-            if (iBoot.Marke != "Alle")
+
+            if (iBoot.Marke != null)
             {
-                dbCommand.CommandText += " WHERE Marke = [pMarke]";
+                dbCommand.CommandText += " AND Marke = [pMarke]";
                 this.AddParameter(dbCommand, "pMake", iBoot.Marke);
             }
-            if (iBoot.Material != "Alle")
+            
+            if (iBoot.Material != null)
             {
-                dbCommand.CommandText += " AND Material = [pMaterial]";
-                this.AddParameter(dbCommand, "pMaterial", iBoot.Material);
+                dbCommand.CommandText += " AND Material = [@Material]";
+                this.AddParameter(dbCommand, "@Material", iBoot.Material);
             }
 
-            dbCommand.CommandText += " AND Preis <= [pPreis]";
-            this.AddParameter(dbCommand, "pPreis", iBoot.Preis);
+            dbCommand.CommandText += " AND Preis <= [@Preis]";
+            this.AddParameter(dbCommand, "@Preis", iBoot.Preis);
 
-            dbCommand.CommandText += " AND Baujahr >= [pBaujahr]";
-            this.AddParameter(dbCommand, "pBaujahr", iBoot.Baujahr);
+            dbCommand.CommandText += " AND Baujahr >= [@Baujahr]";
+            this.AddParameter(dbCommand, "@Baujahr", iBoot.Baujahr);
 
-            dbCommand.CommandText += " AND LIEGEPLATZ <= [pLiegeplatz]";
-            this.AddParameter(dbCommand, "pLiegeplatz", iBoot.Liegeplatz);
+            if (iBoot.Liegeplatz != null)
+            {
+                dbCommand.CommandText += " AND LIEGEPLATZ = [@Liegeplatz]";
+                this.AddParameter(dbCommand, "@Liegeplatz", iBoot.Liegeplatz);
+            }
+           
 
             dbCommand.CommandText += " ORDER BY Preis";
         }
@@ -156,9 +180,9 @@ namespace BootsDaten
         {
             // preconditions
             if (dataTable == null)
-                throw new Exception(" ADatabase.Fill() dataTable is null");
+                throw new Exception(" ZDatenbank.Fill() dataTable is null");
             if (dbDataAdapter == null)
-                throw new Exception(" ADatabase.Fill() dbDataAdapter is null");
+                throw new Exception(" ZDatenbank.Fill() dbDataAdapter is null");
 
             int nRows = 0;
             try
@@ -168,8 +192,8 @@ namespace BootsDaten
             }
             catch (Exception exception)
             {
-                string sql = dbDataAdapter.SelectCommand.CommandText;
-                string message = string.Format("ADatabase.Fill() {0} fails\n", sql) + exception.Message;
+                string access = dbDataAdapter.SelectCommand.CommandText;
+                string message = string.Format("ZDatenbank.Fill() {0} fails\n", access) + exception.Message;
                 throw new Exception(message);
             }
         }
@@ -178,9 +202,9 @@ namespace BootsDaten
         {
             // preconditions
             if (dataTable == null)
-                throw new Exception(" ADatabase.Update() dataTable is null");
+                throw new Exception(" ZDatenbank.Update() dataTable is null");
             if (dbDataAdapter == null)
-                throw new Exception(" ADatabase.Update() dbDataAdapter is null");
+                throw new Exception(" ZDatenbank.Update() dbDataAdapter is null");
 
             int nRows = 0;
             try
@@ -190,7 +214,7 @@ namespace BootsDaten
             }
             catch (Exception exception)
             {
-                string message = string.Format("ADatabase.Update() fails\n") + exception.Message;
+                string message = string.Format("ZDatenbank.Update() fails\n") + exception.Message;
                 throw new Exception(message);
             }
             return nRows;
@@ -200,7 +224,7 @@ namespace BootsDaten
         {
             // preconditions
             if (dbDataAdapter == null)
-                throw new Exception(" ADatabase.GetSchema() dbDataAdapter is null");
+                throw new Exception(" ZDatenbank.GetSchema() dbDataAdapter is null");
 
             try
             {
@@ -210,10 +234,11 @@ namespace BootsDaten
             }
             catch (Exception exception)
             {
-                string message = string.Format("ADatabase.GetSchema() fails\n") + exception.Message;
+                string message = string.Format("ZDatenbank.GetSchema() fails\n") + exception.Message;
                 throw new Exception(message);
             }
         }
+        #endregion
 
     }
 }

@@ -1,8 +1,9 @@
-﻿
+﻿using System;
+
+
 namespace BootsLogik
 {
-    
-    public interface INDialogFAQ
+    public interface INDialogKonto
     {
         void Init();
     }

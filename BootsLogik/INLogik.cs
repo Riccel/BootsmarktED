@@ -6,6 +6,8 @@ namespace BootsLogik
     {
         INLogikSuche LogikSuche { get; }
         INLogikVerkaufen LogikVerkaufen { get; }
+
+        
     }
 
     public interface INLogikSuche
@@ -21,4 +23,8 @@ namespace BootsLogik
         void InsertBoot(INBoot iBoot);
 
     }
+
+   
+
+   
 }

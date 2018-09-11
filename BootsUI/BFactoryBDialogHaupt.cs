@@ -4,9 +4,9 @@ namespace BootsUI
 {
     public class BFactoryBDialogHaupt : INFactoryIDialogHaupt
     {
-        public INDialog Create(INLogik iLogik)
+        public INDialog Create(INLogik iLogik,INDialogFAQ iLogikFAQ, INDialogKonto iLogikKonto)
         {
-            return new BDialogHaupt(iLogik);
+            return new BDialogHaupt(iLogik, iLogikFAQ, iLogikKonto);
         }
     }
 }
