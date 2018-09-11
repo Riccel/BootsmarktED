@@ -32,6 +32,7 @@ namespace BootsLogik.Boot
             dataRow["Preis"] = Preis;
             dataRow["Baujahr"] = Baujahr;
             dataRow["Liegeplatz"] = Liegeplatz;
+            dataRow["fKey"] = -1;
             dataTable.Rows.Add(dataRow); 
         }
 

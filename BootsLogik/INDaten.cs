@@ -15,6 +15,8 @@ namespace BootsLogik
         void Init(ref int nBoote, out object[] arrayMarke);
         object[] GetMaterial(string Marke);
 
+        object[] GetLiegeplatz(string Liegeplatz);
+
     }
 
     public interface INDatenAbr

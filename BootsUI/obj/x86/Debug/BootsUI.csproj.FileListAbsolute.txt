@@ -16,3 +16,4 @@ C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.pdb
 C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogHaupt.resources
 C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogFAQ.resources
 C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogKonto.resources
+C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.Properties.Resources.resources

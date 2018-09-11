@@ -51,12 +51,12 @@ namespace BootsUI
         {
             if (this.comboBoxMarke.Items.Count <= 0) return;
             this.comboBoxMarke.Text = this.comboBoxMarke.SelectedItem.ToString();
-            string marke = this.comboBoxMarke.Text;
-            if (marke == "Alle") return;
+            string Marke = this.comboBoxMarke.Text;
+            if (Marke == "Alle") return;
 
             // Alle Marken mit dem Material aus der Datenbank lesen
             comboBoxMaterial.Items.Clear();
-            comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(marke));
+            comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(Marke));
             comboBoxMaterial.Items.Add("Alle");
             comboBoxMaterial.Text = comboBoxMaterial.Items[0].ToString();
         }

@@ -37,6 +37,13 @@ namespace BootsLogik
             return _iDataCon.GetMaterial(Marke);
         }
 
+        public object[] GetLiegeplatz(string Liegeplatz)
+        {
+            return _iDataCon.GetLiegeplatz(Liegeplatz);
+        }
+
+
+
         public void SelectBoot(INBoot iBoot, ref DataTable datatable)
         {
             _iDataDis.SelectBoot(iBoot, ref datatable);

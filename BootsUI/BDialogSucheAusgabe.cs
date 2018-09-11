@@ -38,7 +38,7 @@ namespace BootsUI
             // set primary key and foreign keys columns invisible
             foreach (DataGridViewColumn column in this.dataGridView1.Columns)
             {
-                if (column.Name.Substring(0, 2) == "ID")
+                if (column.Name.Substring(0, 2) == "ID" || column.Name.Substring(0, 2) == "fKey")
                     column.Visible = false;
             }
 

@@ -2,7 +2,6 @@
 {
     public interface INFactoryIBoot
     {
-
         INBoot Create();
     }
 }

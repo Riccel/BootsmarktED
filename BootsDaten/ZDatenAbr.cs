@@ -100,11 +100,7 @@ namespace BootsDaten
             this.DbCommandSelectBoot(iBoot, dbCommand);
             dbDataAdapter.SelectCommand = dbCommand;
             int n = dbDataAdapter.Fill(dataTable);
-
-            
             dbDataAdapter.Fill(dataTable);
-            
-            iBoot.UpdateDataRow(dataTable);
             dbDataAdapter.Update(dataTable);
         }
 
@@ -120,29 +116,27 @@ namespace BootsDaten
             dbCommand.CommandText = @"SELECT * FROM Boote WHERE 1";
 
 
-            if (iBoot.Marke != null)
+            if (iBoot.Marke != "Alle")
             {
                 dbCommand.CommandText += " AND Marke = [pMarke]";
                 this.AddParameter(dbCommand, "pMake", iBoot.Marke);
             }
             
-            if (iBoot.Material != null)
+            if (iBoot.Material != "Alle")
             {
-                dbCommand.CommandText += " AND Material = [@Material]";
-                this.AddParameter(dbCommand, "@Material", iBoot.Material);
+                dbCommand.CommandText += " AND Material = [pMaterial]";
+                this.AddParameter(dbCommand, "pMaterial", iBoot.Material);
             }
 
-            dbCommand.CommandText += " AND Preis <= [@Preis]";
-            this.AddParameter(dbCommand, "@Preis", iBoot.Preis);
+            dbCommand.CommandText += " AND Preis <= [pPreis]";
+            this.AddParameter(dbCommand, "pPreis", iBoot.Preis);
 
-            dbCommand.CommandText += " AND Baujahr >= [@Baujahr]";
-            this.AddParameter(dbCommand, "@Baujahr", iBoot.Baujahr);
+            dbCommand.CommandText += " AND Baujahr >= [pBaujahr]";
+            this.AddParameter(dbCommand, "pBaujahr", iBoot.Baujahr);
 
-            if (iBoot.Liegeplatz != null)
-            {
-                dbCommand.CommandText += " AND LIEGEPLATZ = [@Liegeplatz]";
-                this.AddParameter(dbCommand, "@Liegeplatz", iBoot.Liegeplatz);
-            }
+            dbCommand.CommandText += " AND LIEGEPLATZ = [pLiegeplatz]";
+            this.AddParameter(dbCommand, "pLiegeplatz", iBoot.Liegeplatz);
+            
            
 
             dbCommand.CommandText += " ORDER BY Preis";

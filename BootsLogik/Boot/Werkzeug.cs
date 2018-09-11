@@ -5,9 +5,9 @@
         public static int CreateID()
         {
             // 16 Byte Schlüssel
-            System.Guid gUID = System.Guid.NewGuid();
-            string strgUID = gUID.ToString();
-            byte[] bUID = gUID.ToByteArray();
+            System.Guid ID = System.Guid.NewGuid();
+            string strgUID = ID.ToString();
+            byte[] bUID = ID.ToByteArray();
 
             // die ersten 8 Bytes werden verwendet
             int lUID = 0;
