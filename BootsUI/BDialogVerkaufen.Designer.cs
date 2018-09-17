@@ -28,73 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxLiegeplatz = new System.Windows.Forms.ComboBox();
-            this.comboBoxMarke = new System.Windows.Forms.ComboBox();
-            this.comboBoxBaujahr = new System.Windows.Forms.ComboBox();
-            this.comboBoxPreis = new System.Windows.Forms.ComboBox();
-            this.comboBoxMaterial = new System.Windows.Forms.ComboBox();
             this.button2Abbrechen = new System.Windows.Forms.Button();
             this.button1Verkaufen = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2Liegeplatz = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.textBox3Material = new System.Windows.Forms.TextBox();
+            this.textBox4Preis = new System.Windows.Forms.TextBox();
+            this.textBox5Baujahr = new System.Windows.Forms.TextBox();
+            this.textBox6Marke = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // comboBoxLiegeplatz
-            // 
-            this.comboBoxLiegeplatz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLiegeplatz.FormattingEnabled = true;
-            this.comboBoxLiegeplatz.Location = new System.Drawing.Point(76, 284);
-            this.comboBoxLiegeplatz.Name = "comboBoxLiegeplatz";
-            this.comboBoxLiegeplatz.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxLiegeplatz.TabIndex = 35;
-            // 
-            // comboBoxMarke
-            // 
-            this.comboBoxMarke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMarke.FormattingEnabled = true;
-            this.comboBoxMarke.Items.AddRange(new object[] {
-            "Typhoon",
-            "Porsche",
-            "BMW"});
-            this.comboBoxMarke.Location = new System.Drawing.Point(76, 68);
-            this.comboBoxMarke.Name = "comboBoxMarke";
-            this.comboBoxMarke.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxMarke.TabIndex = 34;
-            this.comboBoxMarke.SelectedIndexChanged += new System.EventHandler(this.comboBoxMarke_SelectedIndexChanged);
-            // 
-            // comboBoxBaujahr
-            // 
-            this.comboBoxBaujahr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBaujahr.FormattingEnabled = true;
-            this.comboBoxBaujahr.Location = new System.Drawing.Point(76, 120);
-            this.comboBoxBaujahr.Name = "comboBoxBaujahr";
-            this.comboBoxBaujahr.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxBaujahr.TabIndex = 33;
-            // 
-            // comboBoxPreis
-            // 
-            this.comboBoxPreis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPreis.FormattingEnabled = true;
-            this.comboBoxPreis.Location = new System.Drawing.Point(76, 175);
-            this.comboBoxPreis.Name = "comboBoxPreis";
-            this.comboBoxPreis.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPreis.TabIndex = 32;
-            // 
-            // comboBoxMaterial
-            // 
-            this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMaterial.Location = new System.Drawing.Point(76, 229);
-            this.comboBoxMaterial.Name = "comboBoxMaterial";
-            this.comboBoxMaterial.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxMaterial.TabIndex = 36;
             // 
             // button2Abbrechen
             // 
@@ -138,13 +89,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.panel1.Controls.Add(this.textBox6Marke);
+            this.panel1.Controls.Add(this.textBox5Baujahr);
+            this.panel1.Controls.Add(this.textBox4Preis);
+            this.panel1.Controls.Add(this.textBox3Material);
+            this.panel1.Controls.Add(this.textBox2Liegeplatz);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.comboBoxLiegeplatz);
-            this.panel1.Controls.Add(this.comboBoxMaterial);
             this.panel1.Controls.Add(this.button1Verkaufen);
-            this.panel1.Controls.Add(this.comboBoxPreis);
-            this.panel1.Controls.Add(this.comboBoxBaujahr);
-            this.panel1.Controls.Add(this.comboBoxMarke);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label10);
@@ -153,6 +104,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 449);
             this.panel1.TabIndex = 37;
+            // 
+            // textBox2Liegeplatz
+            // 
+            this.textBox2Liegeplatz.Location = new System.Drawing.Point(76, 287);
+            this.textBox2Liegeplatz.Name = "textBox2Liegeplatz";
+            this.textBox2Liegeplatz.Size = new System.Drawing.Size(121, 20);
+            this.textBox2Liegeplatz.TabIndex = 37;
+            this.textBox2Liegeplatz.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label7
             // 
@@ -204,6 +163,36 @@
             this.label11.TabIndex = 15;
             this.label11.Text = "Marke";
             // 
+            // textBox3Material
+            // 
+            this.textBox3Material.Location = new System.Drawing.Point(76, 232);
+            this.textBox3Material.Name = "textBox3Material";
+            this.textBox3Material.Size = new System.Drawing.Size(121, 20);
+            this.textBox3Material.TabIndex = 38;
+            // 
+            // textBox4Preis
+            // 
+            this.textBox4Preis.Location = new System.Drawing.Point(76, 178);
+            this.textBox4Preis.Name = "textBox4Preis";
+            this.textBox4Preis.Size = new System.Drawing.Size(121, 20);
+            this.textBox4Preis.TabIndex = 39;
+            // 
+            // textBox5Baujahr
+            // 
+            this.textBox5Baujahr.Location = new System.Drawing.Point(76, 120);
+            this.textBox5Baujahr.Name = "textBox5Baujahr";
+            this.textBox5Baujahr.Size = new System.Drawing.Size(121, 20);
+            this.textBox5Baujahr.TabIndex = 40;
+            // 
+            // textBox6Marke
+            // 
+            this.textBox6Marke.Location = new System.Drawing.Point(76, 68);
+            this.textBox6Marke.Name = "textBox6Marke";
+            this.textBox6Marke.Size = new System.Drawing.Size(121, 20);
+            this.textBox6Marke.TabIndex = 41;
+            this.Controls.Add(textBox6Marke);
+
+            // 
             // BDialogVerkaufen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,12 +214,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBoxLiegeplatz;
-        private System.Windows.Forms.ComboBox comboBoxMarke;
-        private System.Windows.Forms.ComboBox comboBoxBaujahr;
-        private System.Windows.Forms.ComboBox comboBoxPreis;
-        private System.Windows.Forms.ComboBox comboBoxMaterial;
         private System.Windows.Forms.Button button2Abbrechen;
         private System.Windows.Forms.Button button1Verkaufen;
         private System.Windows.Forms.Panel panel2;
@@ -241,5 +224,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox2Liegeplatz;
+        private System.Windows.Forms.TextBox textBox6Marke;
+        private System.Windows.Forms.TextBox textBox5Baujahr;
+        private System.Windows.Forms.TextBox textBox4Preis;
+        private System.Windows.Forms.TextBox textBox3Material;
     }
 }

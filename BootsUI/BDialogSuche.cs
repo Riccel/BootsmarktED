@@ -59,6 +59,8 @@ namespace BootsUI
             comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(Marke));
             comboBoxMaterial.Items.Add("Alle");
             comboBoxMaterial.Text = comboBoxMaterial.Items[0].ToString();
+
+            
         }
 
 
@@ -74,13 +76,15 @@ namespace BootsUI
         // Suchen drücken
         private void button1Suchen_Click(object sender, EventArgs e)
         {
+           
             INBoot iBoot = _dialogHaupt.Boot;
             iBoot.Marke = this.comboBoxMarke.Text;
             iBoot.Material = this.comboBoxMaterial.Text;
-            iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxPreis.Text, 999999);
-            iBoot.Baujahr = Werkzeug.ParseInt(this.comboBoxBaujahr.Text, 1950);
+            iBoot.Preis = this.comboBoxPreis.Text;
+            iBoot.Baujahr = this.comboBoxBaujahr.Text;
             iBoot.Liegeplatz = this.comboBoxLiegeplatz.Text;
-
+            _dialogHaupt.Boot = iBoot;
+            //_iLogikSuche.SelectBoot(iBoot);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

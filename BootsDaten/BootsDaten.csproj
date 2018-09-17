@@ -92,7 +92,7 @@
     <Compile Include="INFactoryIDaten.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZDaten.cs" />
-    <Compile Include="ZDatenAbr.cs" />
+    <Compile Include="ZDatenAbfragen.cs" />
     <Compile Include="ZDatenVerb.cs" />
   </ItemGroup>
   <ItemGroup>

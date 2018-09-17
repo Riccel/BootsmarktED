@@ -7,26 +7,33 @@ namespace BootsLogik.Boot
     {
         public string Marke { get; set; }
         public string Material { get; set; }
-        public double Preis { get; set; }
-        public int Baujahr { get; set; }
+        public string Preis { get; set; }
+        public string Baujahr { get; set; }
         public string Liegeplatz { get; set; }
-        public string ID { get; set; }
+        public long ID { get; set; }
 
 
         public Boot() { }
 
-        public Boot(string id)
+        public Boot(long id)
         {
             ID = id;
             DateTime dateTime = DateTime.Today;
-            Baujahr = dateTime.Year;
+            //Baujahr = dateTime.Year;
         }
 
-        public void UpdateDataRow(DataTable dataTable)
+        public void AddNewDataRow(DataTable dataTable)
         {
 
             DataRow dataRow = dataTable.NewRow();
-            dataRow["ID"] = Werkzeug.CreateID();
+            if (this.ID != 0)
+            {
+                dataRow["ID"] = ID;
+            }
+            else
+            {
+                dataRow["ID"] = Werkzeug.CreateID();
+            }
             dataRow["Marke"] = Marke;
             dataRow["Material"] = Material;
             dataRow["Preis"] = Preis;
@@ -36,16 +43,57 @@ namespace BootsLogik.Boot
             dataTable.Rows.Add(dataRow); 
         }
 
-        public Boot(DataRow dataRow)
+        public void UpdateDataRow(DataTable dataTable)
         {
-            ID = Convert.ToString(dataRow.ItemArray[0]);
-            Marke = Convert.ToString(dataRow.ItemArray[1]);
-            Material = Convert.ToString(dataRow.ItemArray[2]);
-            Preis = Convert.ToDouble(dataRow.ItemArray[3]);
-            Baujahr = Convert.ToInt32(dataRow.ItemArray[4]);
-            Liegeplatz = Convert.ToString(dataRow.ItemArray[5]);
+
+            DataRow dataRow = dataTable.Rows[0];
+            
+            dataRow["ID"] = ID;
+           
+            dataRow["Marke"] = Marke;
+            dataRow["Material"] = Material;
+            dataRow["Preis"] = Preis;
+            dataRow["Baujahr"] = Baujahr;
+            dataRow["Liegeplatz"] = Liegeplatz;
+            //dataRow["fKey"] = -1;
             
         }
+
+        public INBoot ErzeugeBoot(DataRow dataRow)
+        {
+            INBoot iBoot = new BFactoryBoot().Create();
+            iBoot.ID = (long)dataRow["ID"];
+            iBoot.Marke = (string)dataRow["Marke"];
+            iBoot.Material = (string)dataRow["Material"];
+            iBoot.Liegeplatz = (string)dataRow["Liegeplatz"];
+            iBoot.Baujahr = (string)dataRow["Baujahr"];
+            iBoot.Preis = (string)dataRow["Preis"];
+            
+            if (!dataRow["Marke"].Equals(DBNull.Value))
+            {
+                iBoot.Marke = (string)dataRow["Marke"];
+            }
+            if (!dataRow["Material"].Equals(DBNull.Value))
+            {
+                iBoot.Material = (string)dataRow["Material"];
+            }
+            if (!dataRow["Liegenplatz"].Equals(DBNull.Value))
+            {
+                iBoot.Liegeplatz = (string)dataRow["Liegeplatz"];
+            }
+            if (!dataRow["Baujahr"].Equals(DBNull.Value))
+            {
+                iBoot.Baujahr = (string)dataRow["Baujahr"];
+            }
+            if (!dataRow["Preis"].Equals(DBNull.Value))
+            {
+                iBoot.Preis = (string)dataRow["Preis"];
+            }
+
+
+            return iBoot;
+        }
+
 
     }
 }

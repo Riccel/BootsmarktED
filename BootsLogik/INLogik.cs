@@ -15,9 +15,15 @@ namespace BootsLogik
         void Init(ref int nBoote, out object[] arrayMarke);
         object[] GetMaterial(string Marke);
 
-        object[] GetLiegeplatz(string Liegeplatz);
+        //object[] GetLiegeplatz(string Liegeplatz);
+
+        
 
         void SelectBoot(INBoot iBoot, ref DataTable dataTable);
+
+        //void SelectHamburg(INBoot iBoot, ref DataTable dataTable);
+
+        
     }
 
     public interface INLogikVerkaufen

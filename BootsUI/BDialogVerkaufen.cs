@@ -33,37 +33,63 @@ namespace BootsUI
         #region Method
         private void BDialogVerkaufen_Load(object sender, EventArgs e)
         {
-            comboBoxMarke.Items.Clear();
-            comboBoxMarke.Items.AddRange(_dialogHaupt.Marke);
-            comboBoxMarke.Items.Add("Alle");
-            comboBoxMarke.Text = comboBoxMarke.Items[0].ToString();
+            textBox5Baujahr.Clear();
+            textBox6Marke.Clear();
+            textBox3Material.Clear();
+            textBox4Preis.Clear();
+            textBox2Liegeplatz.Clear();
+
+
+
+            //textBox6Marke.Addrange(_dialogHaupt.Marke);
+            //textBox6Marke.Add("Alle");
+            //textBox6Marke.Text = textBox6Marke.Items[0].ToString();
         }
 
-        private void comboBoxMarke_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.comboBoxMarke.Items.Count <= 0) return;
-            this.comboBoxMarke.Text = this.comboBoxMarke.SelectedItem.ToString();
-            string marke = this.comboBoxMarke.Text;
-            if (marke == "Alle") return;
+        //private void comboBoxMarke_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (this.comboBoxMarke.Items.Count <= 0) return;
+        //    this.comboBoxMarke.Text = this.comboBoxMarke.SelectedItem.ToString();
+        //    string marke = this.comboBoxMarke.Text;
+        //    if (marke == "Alle") return;
 
-            // Alle Modelle des Herstellers aus der Datenbank lesen
-            comboBoxMaterial.Items.Clear();
-            comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(marke));
-            comboBoxMaterial.Items.Add("Alle");
-            comboBoxMaterial.Text = comboBoxMaterial.Items[0].ToString();
-        }
+        //    // Alle Modelle des Herstellers aus der Datenbank lesen
+        //    comboBoxMaterial.Items.Clear();
+        //    comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(marke));
+        //    comboBoxMaterial.Items.Add("Alle");
+        //    comboBoxMaterial.Text = comboBoxMaterial.Items[0].ToString();
+        //}
 
         private void button1Verkaufen_Click(object sender, EventArgs e)
         {
-            INBoot iBoot = _dialogHaupt.Boot;
-            iBoot.Marke = this.comboBoxMarke.Text;
-            iBoot.Material = this.comboBoxMaterial.Text;
-            iBoot.Preis = Werkzeug.ParseDouble(this.comboBoxPreis.Text, 0);
-            iBoot.Baujahr = Werkzeug.ParseInt(this.comboBoxBaujahr.Text, 0);
-            iBoot.Liegeplatz = Werkzeug.LiegeplatzTest(this.comboBoxLiegeplatz.Text);
+            int baujahr;
+            bool isValidNumber = int.TryParse(textBox5Baujahr.Text, out baujahr);
+            if (!isValidNumber)
+            {
+                textBox5Baujahr.Text = "Keine Zahl";
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            }
+
+            double preis;
+            bool stimmt = double.TryParse(textBox4Preis.Text, out preis);
+            if (!stimmt)
+            {
+                textBox4Preis.Text = "Keine Zahl";
+
+            }
+
+            
+            else
+            {
+                INBoot iBoot = _dialogHaupt.Boot;
+                iBoot.Marke = this.textBox6Marke.Text;
+                iBoot.Material = this.textBox3Material.Text;
+                iBoot.Preis = this.textBox4Preis.Text;
+                iBoot.Baujahr = this.textBox5Baujahr.Text;
+                iBoot.Liegeplatz = this.textBox2Liegeplatz.Text;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
 
@@ -73,6 +99,11 @@ namespace BootsUI
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,8 +8,6 @@ namespace BootsLogik
         private INDaten _iData;
         private INDatenVerb _iDataCon;
         private INDatenAbr _iDataDis;
-        //private INBoot _iBoot;
-
         #endregion
 
         #region Properties         
@@ -37,17 +35,26 @@ namespace BootsLogik
             return _iDataCon.GetMaterial(Marke);
         }
 
-        public object[] GetLiegeplatz(string Liegeplatz)
-        {
-            return _iDataCon.GetLiegeplatz(Liegeplatz);
-        }
+        //public object[] GetLiegeplatz(string Liegeplatz)
+        //{
+        //    return _iDataCon.GetLiegeplatz(Liegeplatz);
+        //}
 
+
+
+        //public void SelectHamburg(INBoot iBoot, ref DataTable dataTable)
+        //{
+        //    _iDataDis.SelectHamburg(iBoot, ref dataTable);
+        //}
 
 
         public void SelectBoot(INBoot iBoot, ref DataTable datatable)
         {
             _iDataDis.SelectBoot(iBoot, ref datatable);
         }
+
+
+        
         #endregion
 
         #region Interface INLogikVerkaufen Methods

@@ -11,6 +11,7 @@ using BootsLogik;
 using BootsLogik.Boot;
 
 
+
 namespace BootsUI
 {
     internal partial class BDialogHaupt : Form, INDialog
@@ -39,7 +40,7 @@ namespace BootsUI
         #endregion
 
         #region Properties
-        internal INBoot Boot { get { return _iBoot; } }
+        internal INBoot Boot { get { return _iBoot; }set { _iBoot = value; } }
         internal object[] Marke { get { return _arrayMarke; } }
         #endregion
 
@@ -94,12 +95,20 @@ namespace BootsUI
         // Suchen Button
         private void button1Suchen_Click(object sender, EventArgs e)
         {
+            
+            //Liegeplaetze iBoot = new BFactoryLiegeplatz().Create();
+
+
+
             DialogResult dialogResult = _dialogSuche.ShowDialog();
             DataTable dataTable = new DataTable();
             if (dialogResult == DialogResult.OK)
             {
                 // Suchen ausführen
+               
+                //_iLogikSuche.SelectHamburg(_iBoot, ref dataTable);
                 _iLogikSuche.SelectBoot(_iBoot, ref dataTable);
+               
                 // Ergebnis in DialogSearchView darstellen
                 if (_dialogSucheAusgabe is BDialogSucheAusgabe)
                 {
@@ -108,6 +117,7 @@ namespace BootsUI
                 }
                 dialogResult = _dialogSucheAusgabe.ShowDialog();
             }
+           
         }
 
 
@@ -134,5 +144,7 @@ namespace BootsUI
         {
             DialogResult dialogResult = _dialogKonto.ShowDialog();
         }
+
+        
     }
 }

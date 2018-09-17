@@ -52,6 +52,7 @@
             this.comboBoxLiegeplatz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLiegeplatz.FormattingEnabled = true;
             this.comboBoxLiegeplatz.Items.AddRange(new object[] {
+            "",
             "Bremerhaven",
             "Hamburg",
             "Rügen",
@@ -71,6 +72,7 @@
             this.comboBoxMarke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMarke.FormattingEnabled = true;
             this.comboBoxMarke.Items.AddRange(new object[] {
+            "",
             "Typhoon",
             "Porsche",
             "BMW"});
@@ -85,7 +87,7 @@
             this.comboBoxBaujahr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBaujahr.FormattingEnabled = true;
             this.comboBoxBaujahr.Items.AddRange(new object[] {
-            "ab",
+            "",
             "1980",
             "1985",
             "1990",
@@ -112,7 +114,7 @@
             this.comboBoxPreis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPreis.FormattingEnabled = true;
             this.comboBoxPreis.Items.AddRange(new object[] {
-            "bis",
+            "",
             "500",
             "1.000",
             "1.500",
@@ -145,6 +147,7 @@
             this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaterial.FormattingEnabled = true;
             this.comboBoxMaterial.Items.AddRange(new object[] {
+            "Alle",
             "GFK",
             "Holz"});
             this.comboBoxMaterial.Location = new System.Drawing.Point(76, 224);

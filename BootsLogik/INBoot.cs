@@ -6,10 +6,15 @@ namespace BootsLogik
     {
         string Marke { get; set; }
         string Liegeplatz { get; set; }
-        int Baujahr { get; set; }
-        double Preis { get; set; }
+        string Baujahr { get; set; }
+        string Preis { get; set; }
         string Material { get; set; }
+        long ID { get; set; }
         
+        void AddNewDataRow(DataTable dataTable);
+
         void UpdateDataRow(DataTable dataTable);
+
+        INBoot ErzeugeBoot(DataRow dataRow);
     }
 }

@@ -63,9 +63,9 @@ namespace BootsDaten
         }
 
         // Liste für bestimmte Liegeplätze sortiert nach Marke
-        public object[] GetLiegeplatz(string Liegeplatz)
+        public object[] GetLiegeplatz(string Marke)
         {
-            this.DbCommandGetLiegeplatz(Liegeplatz, _dbCommand);
+            this.DbCommandGetLiegeplatz(Marke, _dbCommand);
             this.Open();
             DbDataReader dbDataReader = this.ExecuteQuery(_dbCommand);
             List<object> listLiegeplatz = new List<object>();
@@ -77,12 +77,6 @@ namespace BootsDaten
             this.Close();
             return listLiegeplatz.ToArray();
         }
-
-
-
-
-
-
 
 
         #endregion
@@ -105,32 +99,32 @@ namespace BootsDaten
             dbCommand.Parameters.Clear();
         }
 
-        protected virtual void DbCommandGetLiegeplatz(string Liegeplatz, DbCommand dbCommand)
-        {
-            dbCommand.CommandText =
-                @"SELECT DISTINCT Liegeplatz FROM Boote WHERE Marke = [pMarke] ORDER BY Preis";
-            dbCommand.CommandType = CommandType.Text;
-            dbCommand.Parameters.Clear();
-            DbParameter dbParameter = _aData.ProviderFactory.CreateParameter();
-            dbParameter.ParameterName = "pLiegeplatz";
-            dbParameter.Value = Liegeplatz;
-            dbCommand.Parameters.Add(dbParameter);
-        }
+       
 
 
         protected virtual void DbCommandGetMaterial(string Marke, DbCommand dbCommand)
         {
             dbCommand.CommandText =
-                @"SELECT DISTINCT Material FROM Boote WHERE Marke = [pMarke] ORDER BY Material";
+                @"SELECT DISTINCT Material FROM Boote WHERE Marke = [Marke] ORDER BY Material";
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
             DbParameter dbParameter = _aData.ProviderFactory.CreateParameter();
-            dbParameter.ParameterName = "pMarke";
+            dbParameter.ParameterName = "Marke";
             dbParameter.Value = Marke;
             dbCommand.Parameters.Add(dbParameter);
         }
 
-
+        protected virtual void DbCommandGetLiegeplatz(string Liegeplatz, DbCommand dbCommand)
+        {
+            dbCommand.CommandText =
+                @"SELECT * FROM Boote WHERE Liegeplatz = [Liegeplatz] ORDER BY Liegeplatz";
+            dbCommand.CommandType = CommandType.Text;
+            dbCommand.Parameters.Clear();
+            DbParameter dbParameter = _aData.ProviderFactory.CreateParameter();
+            dbParameter.ParameterName = "Liegeplatz";
+            dbParameter.Value = Liegeplatz;
+            dbCommand.Parameters.Add(dbParameter);
+        }
 
 
 

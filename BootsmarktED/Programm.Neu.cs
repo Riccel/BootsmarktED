@@ -38,7 +38,7 @@ namespace BootsmarktED
             _iLogik = new BFactoryBLogik().Create(_iDbase);
             _iDialog = new BFactoryBDialogHaupt().Create(_iLogik,_iLogikFAQ,_iLogikKonto);
 
-            // CDialogMain starten
+            // BDialogHaupt starten
             if (_iDialog is Form)
             {
                 Application.Run(_iDialog as Form);

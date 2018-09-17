@@ -90,6 +90,7 @@
             this.label1BooteZaehlen.Size = new System.Drawing.Size(47, 13);
             this.label1BooteZaehlen.TabIndex = 8;
             this.label1BooteZaehlen.Text = "0 Treffer";
+            
             // 
             // panel1
             // 
