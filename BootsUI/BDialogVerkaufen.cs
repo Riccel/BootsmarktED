@@ -63,16 +63,16 @@ namespace BootsUI
         private void button1Verkaufen_Click(object sender, EventArgs e)
         {
             int baujahr;
-            bool isValidNumber = int.TryParse(textBox5Baujahr.Text, out baujahr);
-            if (!isValidNumber)
+            bool istBaujahr = int.TryParse(textBox5Baujahr.Text, out baujahr);
+            if (!istBaujahr)
             {
                 textBox5Baujahr.Text = "Keine Zahl";
 
             }
 
             double preis;
-            bool stimmt = double.TryParse(textBox4Preis.Text, out preis);
-            if (!stimmt)
+            bool istPreis = double.TryParse(textBox4Preis.Text, out preis);
+            if (!istPreis)
             {
                 textBox4Preis.Text = "Keine Zahl";
 
@@ -82,6 +82,7 @@ namespace BootsUI
             else
             {
                 INBoot iBoot = _dialogHaupt.Boot;
+                iBoot.ID = Werkzeug.CreateID();
                 iBoot.Marke = this.textBox6Marke.Text;
                 iBoot.Material = this.textBox3Material.Text;
                 iBoot.Preis = this.textBox4Preis.Text;
@@ -98,6 +99,11 @@ namespace BootsUI
         private void button2Abbrechen_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+            textBox5Baujahr.Clear();
+            textBox6Marke.Clear();
+            textBox3Material.Clear();
+            textBox4Preis.Clear();
+            textBox2Liegeplatz.Clear();
             this.Close();
         }
 

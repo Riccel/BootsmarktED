@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1BooteZaehlen = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,22 +57,11 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Creator: Edgar Wendler und Daniel Wolff";
             // 
-            // label1BooteZaehlen
-            // 
-            this.label1BooteZaehlen.AutoSize = true;
-            this.label1BooteZaehlen.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1BooteZaehlen.Location = new System.Drawing.Point(141, 428);
-            this.label1BooteZaehlen.Name = "label1BooteZaehlen";
-            this.label1BooteZaehlen.Size = new System.Drawing.Size(47, 13);
-            this.label1BooteZaehlen.TabIndex = 8;
-            this.label1BooteZaehlen.Text = "0 Treffer";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1BooteZaehlen);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -122,7 +110,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1BooteZaehlen;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;

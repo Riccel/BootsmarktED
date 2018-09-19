@@ -22,8 +22,18 @@
             return lUID;
         }
 
+        //public static string checkString()
+        //{
+        //    string[] values = { null, .Empty, "ABCDE",
+        //                  new String(' ', 20), "  \t   ",
+        //                  new String('\u2000', 10) };
+        //    foreach (string value in values)
+        //        Console.WriteLine(String.IsNullOrWhiteSpace(value));
+
+        //}
 
     }
 
-    }
+
+ }
 
