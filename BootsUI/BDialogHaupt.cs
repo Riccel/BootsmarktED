@@ -35,7 +35,6 @@ namespace BootsUI
         private INLogikVerkaufen _iLogikVerkaufen;
         private INDialogFAQ _iLogikFAQ;
         private INDialogKonto _iLogikKonto;
-        
         private INBoot _iBoot;
         #endregion
 
@@ -60,7 +59,7 @@ namespace BootsUI
             _dialogFAQ = new BDialogFAQ(iLogikFAQ,this);
             _dialogKonto = new BDialogKonto(iLogikKonto, this);
         }
-        
+
         #endregion
 
 
@@ -68,6 +67,8 @@ namespace BootsUI
 
 
         #region Methode fürs Interface
+
+        // Initialisiere die Suche der Abfrage der Anzahl der Boote
         public void Init()
         {
             _iLogikSuche.Init(ref _nBoote, out _arrayMarke);
@@ -80,6 +81,7 @@ namespace BootsUI
 
         private void BDialogHaupt_Load(object sender, EventArgs e)
         {
+            // Gib die Anzahl der Boote im Label wieder
             this.Init();
             this.label1BooteZaehlen.Text = _nBoote.ToString() + " Treffer";
 
@@ -95,18 +97,12 @@ namespace BootsUI
         // Suchen Button
         private void button1Suchen_Click(object sender, EventArgs e)
         {
-            
-            //Liegeplaetze iBoot = new BFactoryLiegeplatz().Create();
-
-
-
+  
             DialogResult dialogResult = _dialogSuche.ShowDialog();
             DataTable dataTable = new DataTable();
             if (dialogResult == DialogResult.OK)
             {
                 // Suchen ausführen
-               
-                //_iLogikSuche.SelectHamburg(_iBoot, ref dataTable);
                 _iLogikSuche.SelectBoot(_iBoot, ref dataTable);
                
                 // Ergebnis in DialogSearchView darstellen
@@ -117,7 +113,7 @@ namespace BootsUI
                 }
                 dialogResult = _dialogSucheAusgabe.ShowDialog();
             }
-           
+
         }
 
 
@@ -131,6 +127,8 @@ namespace BootsUI
                 // Einfügen ausführen
                 _iLogikVerkaufen.InsertBoot(_iBoot);
             }
+
+            
         }
 
         // FAQ

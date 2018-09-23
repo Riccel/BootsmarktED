@@ -30,7 +30,7 @@ namespace BootsUI
         }
         #endregion
 
-        #region Method
+        #region Methoden
         private void BDialogVerkaufen_Load(object sender, EventArgs e)
         {
             textBox5Baujahr.Clear();
@@ -39,29 +39,13 @@ namespace BootsUI
             textBox4Preis.Clear();
             textBox2Liegeplatz.Clear();
 
-
-
-            //textBox6Marke.Addrange(_dialogHaupt.Marke);
-            //textBox6Marke.Add("Alle");
-            //textBox6Marke.Text = textBox6Marke.Items[0].ToString();
         }
 
-        //private void comboBoxMarke_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (this.comboBoxMarke.Items.Count <= 0) return;
-        //    this.comboBoxMarke.Text = this.comboBoxMarke.SelectedItem.ToString();
-        //    string marke = this.comboBoxMarke.Text;
-        //    if (marke == "Alle") return;
-
-        //    // Alle Modelle des Herstellers aus der Datenbank lesen
-        //    comboBoxMaterial.Items.Clear();
-        //    comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(marke));
-        //    comboBoxMaterial.Items.Add("Alle");
-        //    comboBoxMaterial.Text = comboBoxMaterial.Items[0].ToString();
-        //}
+       
 
         private void button1Verkaufen_Click(object sender, EventArgs e)
         {
+            // Überprüfe Baujahr, soll eine Zahl sein
             int baujahr;
             bool istBaujahr = int.TryParse(textBox5Baujahr.Text, out baujahr);
             if (!istBaujahr)
@@ -70,6 +54,7 @@ namespace BootsUI
 
             }
 
+            // Überprüfe Preis, soll eine Zahl sein
             double preis;
             bool istPreis = double.TryParse(textBox4Preis.Text, out preis);
             if (!istPreis)
@@ -78,7 +63,7 @@ namespace BootsUI
 
             }
 
-            
+            // Nach Überprüfung gebe Daten weiter an INBoot
             else
             {
                 INBoot iBoot = _dialogHaupt.Boot;
@@ -96,6 +81,8 @@ namespace BootsUI
 
         #endregion
 
+
+        // Abbrechen
         private void button2Abbrechen_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

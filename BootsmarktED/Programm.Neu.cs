@@ -21,14 +21,13 @@ namespace BootsmarktED
         // BootsDaten
         private INDaten _iDbase;
 
-        
-
-        
+  
         #endregion
 
         void Run()
         {
 
+            // Datenbankverbindung herstellen
             string wegDbZugang = Properties.Settings.Default.WegDbZugang;
             string providerDbZugang = Properties.Settings.Default.ProviderDbZugang;
             string connectionString = providerDbZugang + wegDbZugang + ";";

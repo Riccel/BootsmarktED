@@ -2,35 +2,30 @@
 
 namespace BootsLogik
 {
+
+    // Interface für INDaten
     public interface INDaten
     {
-        INDatenAbr DataDis { get; }
-        INDatenVerb DataCon { get; }
+        INDatenAbr DatenAbr { get; }
+        INDatenVerb DatenVerb { get; }
 
         
     }
 
+    // Interface für INDatenVerb
     public interface INDatenVerb
     {
         void Init(ref int nBoote, out object[] arrayMarke);
         object[] GetMaterial(string Marke);
 
-        //object[] GetLiegeplatz(string Liegeplatz);
-
-       
-
     }
 
+    // Interface für INDatenAbr
     public interface INDatenAbr
     {
         void SelectBoot(INBoot iBoot, ref DataTable dataTable);
         void InsertBoot(INBoot iBoot);
-        //void SelectHamburg(INBoot iBoot, ref DataTable dataTable);
-      
-        
+  
     }
 
-    
-
-    
 }

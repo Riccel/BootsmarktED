@@ -2,6 +2,9 @@
 
 namespace BootsDaten.Datenbankzugang
 {
+    // Erbt von ZDaten
+    // Bereitet die Verbindung zur Datenbank vor
+    // Mit Provider und Pfad
     internal class ZDatenVerbindung : ZDaten
     {
         #region ctor
@@ -12,8 +15,8 @@ namespace BootsDaten.Datenbankzugang
             _providerString = "System.Data.OLEDB";
             this.Setup();
 
-            _iDataCon = new ZDatenVerbZugang(this);
-            _iDataDis = new ZDatenAbrZugang(this);
+            _iDatenVerb = new ZDatenVerbZugang(this);
+            _iDatenAbr = new ZDatenAbrZugang(this);
         }
         #endregion        
     }

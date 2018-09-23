@@ -21,14 +21,14 @@ namespace BootsDaten
 
 
         // Assoziationen
-        protected INDatenVerb _iDataCon;
-        protected INDatenAbr _iDataDis;
+        protected INDatenVerb _iDatenVerb;
+        protected INDatenAbr _iDatenAbr;
 
         #endregion
 
         #region Properties
-        public INDatenVerb DataCon { get { return _iDataCon; } }
-        public INDatenAbr DataDis { get { return _iDataDis; } }
+        public INDatenVerb DatenVerb { get { return _iDatenVerb; } }
+        public INDatenAbr DatenAbr { get { return _iDatenAbr; } }
         #endregion
 
         internal DbProviderFactory ProviderFactory { get { return _dbProviderFactory; } }
@@ -95,11 +95,6 @@ namespace BootsDaten
             }
         }
         #endregion
-
-        #region statische Methode
-        
-        #endregion
-
 
     }
 }

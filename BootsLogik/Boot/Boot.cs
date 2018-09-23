@@ -5,23 +5,28 @@ namespace BootsLogik.Boot
 {
     internal class Boot : INBoot
     {
+        #region fields
         public string Marke { get; set; }
         public string Material { get; set; }
         public string Preis { get; set; }
         public string Baujahr { get; set; }
         public string Liegeplatz { get; set; }
-        public long ID { get; set; }
+        public int ID { get; set; }
+        #endregion
 
-
+        #region ctor
         public Boot() { }
 
-        public Boot(long id)
+        public Boot(int id)
         {
             ID = id;
-            DateTime dateTime = DateTime.Today;
-            //Baujahr = dateTime.Year;
-        }
 
+        }
+        #endregion
+
+        #region methoden
+
+        // Einfügen eines Tabelleneintrages
         public void AddNewDataRow(DataTable dataTable)
         {
 
@@ -43,6 +48,7 @@ namespace BootsLogik.Boot
             dataTable.Rows.Add(dataRow); 
         }
 
+        // Aktualisiere den Eintrag in der Tabelle
         public void UpdateDataRow(DataTable dataTable)
         {
 
@@ -59,10 +65,11 @@ namespace BootsLogik.Boot
             
         }
 
+        // Füge ein Boot hinzu
         public INBoot ErzeugeBoot(DataRow dataRow)
         {
             INBoot iBoot = new BFactoryBoot().Create();
-            iBoot.ID = (long)dataRow["ID"];
+            iBoot.ID = (int)dataRow["ID"];
             iBoot.Marke = (string)dataRow["Marke"];
             iBoot.Material = (string)dataRow["Material"];
             iBoot.Liegeplatz = (string)dataRow["Liegeplatz"];
@@ -93,6 +100,7 @@ namespace BootsLogik.Boot
 
             return iBoot;
         }
+        #endregion
 
 
     }

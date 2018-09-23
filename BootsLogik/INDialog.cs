@@ -1,7 +1,6 @@
-﻿
-
-namespace BootsLogik
+﻿namespace BootsLogik
 {
+    // Interface INDialog
     public interface INDialog
     {
 

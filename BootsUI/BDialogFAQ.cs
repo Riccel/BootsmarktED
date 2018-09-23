@@ -5,12 +5,11 @@ namespace BootsUI
 {
     internal partial class BDialogFAQ : Form
     {
+
         #region Fields
         private INDialogFAQ _iLogikFAQ;
         private BDialogHaupt _dialogHaupt;
         #endregion
-
-
 
 
         #region ctor

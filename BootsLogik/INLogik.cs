@@ -2,30 +2,27 @@
 
 namespace BootsLogik
 {
+
+    // Interface INLogik
     public interface INLogik
     {
         INLogikSuche LogikSuche { get; }
         INLogikVerkaufen LogikVerkaufen { get; }
-
-        
+  
     }
 
+    // Interface Suche
     public interface INLogikSuche
     {
         void Init(ref int nBoote, out object[] arrayMarke);
         object[] GetMaterial(string Marke);
 
-        //object[] GetLiegeplatz(string Liegeplatz);
-
-        
 
         void SelectBoot(INBoot iBoot, ref DataTable dataTable);
 
-        //void SelectHamburg(INBoot iBoot, ref DataTable dataTable);
-
-        
     }
 
+    // Interface Verkaufen
     public interface INLogikVerkaufen
     {
        

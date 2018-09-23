@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BootsDaten.Datenbankzugang
+﻿namespace BootsDaten.Datenbankzugang
 {
-    internal class ZDatenVerbZugang : ZDatenVerb
+
+    // Erbt von ZDatenverbindung
+    internal class ZDatenVerbZugang : BootsDaten.ZDatenVerbindung
     {
         #region ctor
-        internal ZDatenVerbZugang(ZDaten aData)
-            : base(aData)
+        internal ZDatenVerbZugang(ZDaten zDaten)
+            : base(zDaten)
         {
-
         }
         #endregion 
 

@@ -1,9 +1,10 @@
 ﻿namespace BootsDaten.Datenbankzugang
 {
+    // Erbt von ZDatenAbfrage
     internal class ZDatenAbrZugang : ZDatenAbfragen
     {
-        internal ZDatenAbrZugang(ZDaten aData)
-            : base(aData)
+        internal ZDatenAbrZugang(ZDaten zDaten)
+            : base(zDaten)
         {
         }
     }

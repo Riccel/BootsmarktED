@@ -20,6 +20,7 @@ namespace BootsUI
             InitializeComponent();
             _iLogikSuche = iLogik.LogikSuche;
             _dialogHaupt = dialogHaupt;
+
         }
 
         #endregion
@@ -28,9 +29,11 @@ namespace BootsUI
 
         private void Suche_Load(object sender, EventArgs e)
         {
+
+
             comboBoxMarke.Items.Clear();
             comboBoxMarke.Items.AddRange(_dialogHaupt.Marke);
-            comboBoxMarke.Items.Add("Alle");
+            comboBoxMarke.Items.Add("");
             comboBoxMarke.Text = comboBoxMarke.Items[0].ToString();
 
             if (comboBoxBaujahr.Items.Count >= 1)
@@ -49,15 +52,18 @@ namespace BootsUI
 
         private void comboBoxMarke_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Marke ist immer in Verbindung mit dem Material anzusehen
+            // Wenn in der Suche ein alle Marken ausgewählt wird, sollen das Material mit angegeben werden
+
             if (this.comboBoxMarke.Items.Count <= 0) return;
             this.comboBoxMarke.Text = this.comboBoxMarke.SelectedItem.ToString();
             string Marke = this.comboBoxMarke.Text;
-            if (Marke == "Alle") return;
+            if (Marke == "") return;
 
             // Alle Marken mit dem Material aus der Datenbank lesen
             comboBoxMaterial.Items.Clear();
             comboBoxMaterial.Items.AddRange(_iLogikSuche.GetMaterial(Marke));
-            comboBoxMaterial.Items.Add("Alle");
+            comboBoxMaterial.Items.Add("");
             comboBoxMaterial.Text = comboBoxMaterial.Items[0].ToString();
 
             
@@ -69,7 +75,6 @@ namespace BootsUI
         private void button2Abbrechen_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
-            
             this.Close();
         }
 
@@ -77,6 +82,7 @@ namespace BootsUI
         private void button1Suchen_Click(object sender, EventArgs e)
         {
            
+            // Erzeuge nach den Eingaben das Boot
             INBoot iBoot = _dialogHaupt.Boot;
             iBoot.Marke = this.comboBoxMarke.Text;
             iBoot.Material = this.comboBoxMaterial.Text;
@@ -84,7 +90,7 @@ namespace BootsUI
             iBoot.Baujahr = this.comboBoxBaujahr.Text;
             iBoot.Liegeplatz = this.comboBoxLiegeplatz.Text;
             _dialogHaupt.Boot = iBoot;
-            //_iLogikSuche.SelectBoot(iBoot);
+         
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

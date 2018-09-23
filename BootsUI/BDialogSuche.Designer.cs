@@ -147,7 +147,7 @@
             this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaterial.FormattingEnabled = true;
             this.comboBoxMaterial.Items.AddRange(new object[] {
-            "Alle",
+            "",
             "GFK",
             "Holz"});
             this.comboBoxMaterial.Location = new System.Drawing.Point(76, 224);

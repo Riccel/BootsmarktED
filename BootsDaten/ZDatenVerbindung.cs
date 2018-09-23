@@ -6,26 +6,27 @@ using BootsLogik;
 
 namespace BootsDaten
 {
-    internal abstract class ZDatenVerb : INDatenVerb
+    internal abstract class ZDatenVerbindung : INDatenVerb
     {
         #region Fields        
-        private ZDaten _aData;
+        private ZDaten _zDaten;
         protected DbConnection _dbConnection;
         protected DbCommand _dbCommand;
         #endregion
 
         #region Ctor
-        public ZDatenVerb(ZDaten aData)
+        public ZDatenVerbindung(ZDaten zDaten)
         {
-            _aData = aData;
-            _dbConnection = aData.Connection;
-            _dbCommand = aData.ProviderFactory.CreateCommand();
-            _dbCommand.Connection = aData.Connection;
+            _zDaten = zDaten;
+            _dbConnection = zDaten.Connection;
+            _dbCommand = zDaten.ProviderFactory.CreateCommand();
+            _dbCommand.Connection = zDaten.Connection;
             _dbCommand.CommandType = CommandType.Text;
         }
         #endregion
 
         #region Interface InterfaceDatenverbindung Methode
+
         // Nummer der Boote aus der Datenbank lesen
         public void Init(ref int nBoote, out object[] arrayMarke)
         {
@@ -35,7 +36,7 @@ namespace BootsDaten
 
             this.DbCommandGetMarke(_dbCommand);
             DbDataReader dbDataReader = this.ExecuteQuery(_dbCommand);
-            // Schleife über ResultSet
+            
             List<object> listMarke = new List<object>();
             while (dbDataReader.Read())
             {
@@ -62,26 +63,12 @@ namespace BootsDaten
             return listMaterial.ToArray();
         }
 
-        //// Liste für bestimmte Liegeplätze sortiert nach Marke
-        //public object[] GetLiegeplatz(string Marke)
-        //{
-        //    this.DbCommandGetLiegeplatz(Marke, _dbCommand);
-        //    this.Open();
-        //    DbDataReader dbDataReader = this.ExecuteQuery(_dbCommand);
-        //    List<object> listLiegeplatz = new List<object>();
-        //    while (dbDataReader.Read())
-        //    {
-        //        listLiegeplatz.Add(dbDataReader[0]);
-        //    }
-        //    if (!dbDataReader.IsClosed) dbDataReader.Close();
-        //    this.Close();
-        //    return listLiegeplatz.ToArray();
-        //}
-
-
+  
         #endregion
 
         #region virtual methods
+
+        // Abfrage zum Zählen der Anzahl der Boote in der Datenbank
         protected virtual void DbCommandZaehleBoote(DbCommand dbCommand)
         {
             dbCommand.CommandText =
@@ -91,6 +78,7 @@ namespace BootsDaten
             
         }
 
+        // Abfrage der Boote nur nach Marke
         protected virtual void DbCommandGetMarke(DbCommand dbCommand)
         {
             dbCommand.CommandText =
@@ -101,55 +89,44 @@ namespace BootsDaten
 
        
 
-
+        // Abfrage des Materials nach Marke
         protected virtual void DbCommandGetMaterial(string Marke, DbCommand dbCommand)
         {
             dbCommand.CommandText =
                 @"SELECT DISTINCT Material FROM Boote WHERE Marke = [Marke] ORDER BY Material";
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
-            DbParameter dbParameter = _aData.ProviderFactory.CreateParameter();
+            DbParameter dbParameter = _zDaten.ProviderFactory.CreateParameter();
             dbParameter.ParameterName = "Marke";
             dbParameter.Value = Marke;
             dbCommand.Parameters.Add(dbParameter);
         }
 
-        //protected virtual void DbCommandGetLiegeplatz(string Liegeplatz, DbCommand dbCommand)
-        //{
-        //    dbCommand.CommandText =
-        //        @"SELECT * FROM Boote WHERE Liegeplatz = [Liegeplatz] ORDER BY Liegeplatz";
-        //    dbCommand.CommandType = CommandType.Text;
-        //    dbCommand.Parameters.Clear();
-        //    DbParameter dbParameter = _aData.ProviderFactory.CreateParameter();
-        //    dbParameter.ParameterName = "Liegeplatz";
-        //    dbParameter.Value = Liegeplatz;
-        //    dbCommand.Parameters.Add(dbParameter);
-        //}
+        
 
-
-
-
-
-
-
+        // Datenbank öffnen
         protected virtual void Open()
         {
-            // Ist die Db schon geöffent -> nichts tun
+            // Datenbank geöffnet
             if (_dbConnection.State != ConnectionState.Open)
             {
-                // DB öffnen
+                // Datenbank offen
                 _dbConnection.Open();
-                // Test ob DB jetz offen ist
+                // gib zurück, ob Datenbank offen
                 if (_dbConnection.State != ConnectionState.Open) return;
             }
         }
 
+        // Datenbank schließen
         protected virtual void Close()
         {
+            // Wenn Datenbank offen, dann schließe
             if (_dbConnection.State == ConnectionState.Open)
                 _dbConnection.Close();
         }
 
+
+        // Gib die Objekte der Abfragen zurück
         protected virtual object ExecuteScalar(DbCommand dbCommand)
         {
             if (!(_dbConnection.State == ConnectionState.Open))
@@ -169,6 +146,8 @@ namespace BootsDaten
 
         }
 
+
+        // Gib die Afragen von der Datenbank zurück
         protected virtual DbDataReader ExecuteQuery(DbCommand dbCommand)
         {
 

@@ -12,7 +12,7 @@ namespace BootsUI
         private DataTable _dataTable;
         #endregion
 
-        #region Properties Interface Implementierung der Dialog der Suche
+        #region Properties Interface Implementierung des Dialogs der Suche
         public DataTable ResultTable
         {
             get { return _dataTable; }
@@ -32,17 +32,18 @@ namespace BootsUI
         private void BDialogSucheAusgabe_Load(object sender, EventArgs e)
         {
 
-            // set datasource
+            // setze die Ausgabe in die GridView
             this.dataGridView1.DataSource = ResultTable;
 
-            // set primary key and foreign keys columns invisible
+            // setze die Spalten des primary key and foreign keys auf unsichtbar in der Ausgabe
             foreach (DataGridViewColumn column in this.dataGridView1.Columns)
             {
                 if (column.Name.Substring(0, 2) == "ID" || column.Name.Substring(0, 2) == "fK")
                     column.Visible = false;
             }
 
-            // column width auto
+            
+            // Gebe die Ausgabe in der Spalten wieder/ AutoSize
             foreach (DataGridViewColumn dataGridViewColumn in this.dataGridView1.Columns)
             {
                 dataGridViewColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;

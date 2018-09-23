@@ -19,8 +19,6 @@ namespace BootsUI
         #endregion
 
 
-
-
         #region ctor
         internal BDialogKonto(INDialogKonto LogikKonto, BDialogHaupt dialogHaupt)
         {

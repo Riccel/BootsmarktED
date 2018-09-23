@@ -9,15 +9,15 @@ namespace BootsDaten
     {
 
         #region Fields        
-        private ZDaten _aData;
+        private ZDaten _zDaten;
         protected DbConnection _dbConnection;
         #endregion
 
         #region Ctor
-        internal ZDatenAbfragen(ZDaten aData)
+        internal ZDatenAbfragen(ZDaten zDaten)
         {
-            _aData = aData;
-            _dbConnection = aData.Connection;
+            _zDaten = zDaten;
+            _dbConnection = zDaten.Connection;
         }
 
 
@@ -25,7 +25,9 @@ namespace BootsDaten
 
 
 
+        #region Interface Methoden
 
+        // Methode fürs Verkaufen
         public virtual void InsertBoot(INBoot iBoot)
         {
             DbDataAdapter dbDataAdapter = this.CreateDbDataAdapter("Boote");
@@ -36,18 +38,9 @@ namespace BootsDaten
             {
                 throw new Exception("ZDatenbank.InsertNuzter() fails");
             }
-
-
-
-            /*this.DbCommandInsertBoot(iBoot, dbCommand);
-            int n = dbDataAdapter.Fill(dataTable);
-            dbDataAdapter.Fill(dataTable);
-            iBoot.UpdateDataRow(dataTable);
-            dbDataAdapter.Update(dataTable);*/
-
         }
 
-
+        // Methode fürs Suchen
         public void SelectBoot(INBoot iBoot, ref DataTable dataTable)
         {
             
@@ -57,26 +50,11 @@ namespace BootsDaten
             int n = this.Fill(dataTable,dbDataAdapter);
            
         }
-
-        //public void SelectHamburg(INBoot iBoot, ref DataTable dataTable)
-        //{
-        //    DbDataAdapter dbDataAdapter = this.CreateDbDataAdapter("Boote");
-        //    DbCommand dbCommand = dbDataAdapter.SelectCommand;
-        //    this.DbCommandSelectHamburg(iBoot, dbCommand);
-        //    int n = dbDataAdapter.Fill(dataTable);
-        //}
-
-
-
-
-
-
-
-
-
-
+        #endregion
 
         #region Virtuelle Methoden
+
+        // Abfrage für die Suchen Methode
         protected virtual void DbCommandSelectBoot(INBoot iBoot, DbCommand dbCommand)
         {
 
@@ -114,57 +92,12 @@ namespace BootsDaten
                 dbCommand.CommandText += " AND Liegeplatz = [pLiegeplatz]";
                 this.AddParameter(dbCommand, "pLiegeplatz", iBoot.Liegeplatz);
             }
-            
-         
 
             dbCommand.CommandText += " ORDER BY Preis";
         }
 
 
-        //protected virtual void DbCommandSelectHamburg(INBoot iBoot, DbCommand dbCommand)
-        //{
-
-        //    dbCommand.CommandType = CommandType.Text;
-        //    dbCommand.Parameters.Clear();
-        //    dbCommand.CommandText = @"SELECT * FROM Boote WHERE Liegeplatz = 'Hamburg'";
-
-
-        //    if (iBoot.Marke != null)
-        //    {
-        //        dbCommand.CommandText += " AND Marke = [Marke]";
-        //        this.AddParameter(dbCommand, "Marke", iBoot.Marke);
-        //    }
-
-        //    if (iBoot.Material != null)
-        //    {
-        //        dbCommand.CommandText += " AND Material = [Material]";
-        //        this.AddParameter(dbCommand, "Material", iBoot.Material);
-        //    }
-
-        //    dbCommand.CommandText += " AND Preis <= [Preis]";
-        //    this.AddParameter(dbCommand, "Preis", iBoot.Preis);
-
-
-        //    dbCommand.CommandText += " AND Baujahr >= [Baujahr]";
-        //    this.AddParameter(dbCommand, "Baujahr", iBoot.Baujahr);
-
-
-
-        //    dbCommand.CommandText += " AND Liegeplatz = [Liegeplatz]";
-        //    this.AddParameter(dbCommand, "Liegeplatz", iBoot.Liegeplatz);
-
-
-
-        //    dbCommand.CommandText += " ORDER BY Preis";
-        //}
-
-
-
-
-
-
-
-
+        // Abfrage für die Verkaufen Methode
         protected virtual void DbCommandInsertBoot(INBoot iBoot, DbCommand dbCommand)
         {
 
@@ -204,27 +137,27 @@ namespace BootsDaten
 
         
 
-
+        // Hinzufügen der Parameter, wenn Zugang zur Datenbank
         protected void AddParameter(DbCommand dbCommand, string name, object value)
         {
-            DbParameter dbParameter = _aData.ProviderFactory.CreateParameter();
+            DbParameter dbParameter = _zDaten.ProviderFactory.CreateParameter();
             dbParameter.ParameterName = name;
             dbParameter.Value = value;
             dbCommand.Parameters.Add(dbParameter);
         }
 
+        // Adapter
         protected virtual DbDataAdapter CreateDbDataAdapter(string tableName)
         {
 
-            DbCommand dbSelectCommand = _aData.ProviderFactory.CreateCommand();
+            DbCommand dbSelectCommand = _zDaten.ProviderFactory.CreateCommand();
             dbSelectCommand.Connection = _dbConnection;
             dbSelectCommand.CommandText = string.Format("SELECT * FROM {0}", tableName);
 
-            DbDataAdapter dbDataAdapter = _aData.ProviderFactory.CreateDataAdapter();
+            DbDataAdapter dbDataAdapter = _zDaten.ProviderFactory.CreateDataAdapter();
             dbDataAdapter.SelectCommand = dbSelectCommand;
-            // --- fertig, wenn keine schreibenden Datenbankzugriffe erforderlich ----
-
-            DbCommandBuilder dbCommandBuilder = _aData.ProviderFactory.CreateCommandBuilder();
+      
+            DbCommandBuilder dbCommandBuilder = _zDaten.ProviderFactory.CreateCommandBuilder();
             dbCommandBuilder.DataAdapter = dbDataAdapter;
             dbDataAdapter.InsertCommand = dbCommandBuilder.GetInsertCommand();
             dbDataAdapter.UpdateCommand = dbCommandBuilder.GetUpdateCommand();
@@ -233,6 +166,7 @@ namespace BootsDaten
             return dbDataAdapter;
         }
 
+        // Befüllen der Bootstabellen mit Exceptions
         protected virtual int Fill(DataTable dataTable, DbDataAdapter dbDataAdapter)
         {
             // preconditions
@@ -255,6 +189,7 @@ namespace BootsDaten
             }
         }
 
+        // Update Methode beim Schreiben in die Datenbank
         protected virtual int Update(DataTable dataTable, DbDataAdapter dbDataAdapter)
         {
             // preconditions
@@ -267,7 +202,7 @@ namespace BootsDaten
             try
             {
                 nRows = dbDataAdapter.Update(dataTable);
-                // post condition is nRows == 0 zulässig?
+                
             }
             catch (Exception exception)
             {
@@ -277,6 +212,7 @@ namespace BootsDaten
             return nRows;
         }
 
+        
         public virtual DataTable GetSchema(DbDataAdapter dbDataAdapter)
         {
             // preconditions

@@ -5,9 +5,9 @@ namespace BootsLogik
     internal class BLogik : INLogikSuche, INLogikVerkaufen, INLogik
     {
         #region Fields
-        private INDaten _iData;
-        private INDatenVerb _iDataCon;
-        private INDatenAbr _iDataDis;
+        private INDaten _iDaten;
+        private INDatenVerb _iDatenVerb;
+        private INDatenAbr _iDatenAbr;
         #endregion
 
         #region Properties         
@@ -16,52 +16,42 @@ namespace BootsLogik
         #endregion
 
         #region Ctor
-        internal BLogik(INDaten iData)
+        internal BLogik(INDaten iDaten)
         {
-            _iData = iData;
-            _iDataCon = iData.DataCon;
-            _iDataDis = iData.DataDis;
+            _iDaten = iDaten;
+            _iDatenVerb = iDaten.DatenVerb;
+            _iDatenAbr = iDaten.DatenAbr;
         }
         #endregion
 
         #region Interface INLogikSuche Methods
+
+        // Für die Suche. Methoden
+
         public void Init(ref int nBoote, out object[] arrayMarke)
         {
-            _iDataCon.Init(ref nBoote, out arrayMarke);
+            _iDatenVerb.Init(ref nBoote, out arrayMarke);
         }
 
         public object[] GetMaterial(string Marke)
         {
-            return _iDataCon.GetMaterial(Marke);
+            return _iDatenVerb.GetMaterial(Marke);
         }
-
-        //public object[] GetLiegeplatz(string Liegeplatz)
-        //{
-        //    return _iDataCon.GetLiegeplatz(Liegeplatz);
-        //}
-
-
-
-        //public void SelectHamburg(INBoot iBoot, ref DataTable dataTable)
-        //{
-        //    _iDataDis.SelectHamburg(iBoot, ref dataTable);
-        //}
-
 
         public void SelectBoot(INBoot iBoot, ref DataTable datatable)
         {
-            _iDataDis.SelectBoot(iBoot, ref datatable);
+            _iDatenAbr.SelectBoot(iBoot, ref datatable);
         }
 
-
-        
         #endregion
 
+
+        // Für das Verkaufen. Methode
         #region Interface INLogikVerkaufen Methods
         public void InsertBoot(INBoot iBoot)
         {
             
-            _iDataDis.InsertBoot(iBoot);
+            _iDatenAbr.InsertBoot(iBoot);
             
         }
         #endregion
