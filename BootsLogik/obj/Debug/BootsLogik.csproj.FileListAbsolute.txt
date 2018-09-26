@@ -2,6 +2,5 @@ C:\Users\Daniel\source\repos\BootsmarktED\BootsLogik\obj\Debug\BootsLogik.csproj
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsLogik\bin\Debug\BootsLogik.dll.config
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsLogik\bin\Debug\BootsLogik.dll
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsLogik\bin\Debug\BootsLogik.pdb
-C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsLogik\obj\Debug\BootsLogik.csprojResolveAssemblyReference.cache
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsLogik\obj\Debug\BootsLogik.dll
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsLogik\obj\Debug\BootsLogik.pdb
