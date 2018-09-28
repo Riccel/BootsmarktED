@@ -8,3 +8,11 @@ C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsDaten\bin\Debug\BootsLogik.pdb
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsDaten\obj\Debug\BootsDaten.csprojResolveAssemblyReference.cache
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsDaten\obj\Debug\BootsDaten.dll
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsDaten\obj\Debug\BootsDaten.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\bin\Debug\BootsDaten.dll.config
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\bin\Debug\BootsDaten.dll
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\bin\Debug\BootsDaten.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\bin\Debug\BootsLogik.dll
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\bin\Debug\BootsLogik.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\obj\Debug\BootsDaten.csprojResolveAssemblyReference.cache
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\obj\Debug\BootsDaten.dll
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsDaten\obj\Debug\BootsDaten.pdb

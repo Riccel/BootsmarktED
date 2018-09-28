@@ -12,3 +12,15 @@ C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Debug\BootsUI.pdb
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\obj\Debug\BootsmarktED.csprojResolveAssemblyReference.cache
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\obj\Debug\BootsmarktED.exe
 C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\obj\Debug\BootsmarktED.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsmarktED.exe.config
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\obj\Debug\BootsmarktED.exe
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\obj\Debug\BootsmarktED.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsmarktED.exe
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsmarktED.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsDaten.dll
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsLogik.dll
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsUI.dll
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsDaten.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsLogik.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\bin\Debug\BootsUI.pdb
+C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsmarktED\obj\Debug\BootsmarktED.csprojResolveAssemblyReference.cache
