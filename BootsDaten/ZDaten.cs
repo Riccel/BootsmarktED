@@ -6,7 +6,7 @@ using BootsLogik;
 
 
 namespace BootsDaten
-{
+{// Autor: Edgar Wendler
     internal abstract class ZDaten : INDaten
     {
         #region Fields

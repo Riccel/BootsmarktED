@@ -4,7 +4,7 @@ using System.Data.Common;
 using BootsLogik;
 
 namespace BootsDaten
-{
+{//Autor: Edgar Wendler
     internal abstract class ZDatenAbfragen : INDatenAbr
     {
 
