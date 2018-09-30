@@ -3,7 +3,7 @@
 namespace BootsLogik
 {
     internal class BLogik : INLogikSuche, INLogikVerkaufen, INLogik
-    {
+    {// Autor: Daniel Wolff
         #region Fields
         private INDaten _iDaten;
         private INDatenVerb _iDatenVerb;

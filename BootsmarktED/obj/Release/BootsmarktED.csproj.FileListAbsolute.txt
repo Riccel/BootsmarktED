@@ -1,1 +1,13 @@
 C:\Users\Daniel\source\repos\BootsmarktED\BootsmarktED\obj\Release\BootsmarktED.csproj.CoreCompileInputs.cache
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsmarktED.exe.config
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsmarktED.exe
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsmarktED.pdb
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsDaten.dll
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsLogik.dll
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsUI.dll
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsDaten.pdb
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsLogik.pdb
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\bin\Release\BootsUI.pdb
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\obj\Release\BootsmarktED.csprojResolveAssemblyReference.cache
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\obj\Release\BootsmarktED.exe
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsmarktED\obj\Release\BootsmarktED.pdb

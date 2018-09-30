@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace BootsLogik
-{
+{// Autor: Daniel Wolff
 
     // Interface INLogik
     public interface INLogik

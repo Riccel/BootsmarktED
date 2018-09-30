@@ -17,3 +17,14 @@ C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogH
 C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogFAQ.resources
 C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogKonto.resources
 C:\Users\Daniel\source\repos\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.Properties.Resources.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.csprojResolveAssemblyReference.cache
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogFAQ.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogHaupt.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogKonto.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.Suche.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogSucheAusgabe.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.BDialogVerkaufen.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.Properties.Resources.resources
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.csproj.GenerateResource.Cache
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.dll
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsUI\obj\x86\Debug\BootsUI.pdb

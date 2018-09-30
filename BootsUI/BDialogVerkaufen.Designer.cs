@@ -1,7 +1,7 @@
 ﻿namespace BootsUI
 {
     partial class BDialogVerkaufen
-    {
+    {// Autor: Daniel Wolff, Edgar Wendler
         /// <summary>
         /// Required designer variable.
         /// </summary>

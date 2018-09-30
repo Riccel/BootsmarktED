@@ -1,7 +1,7 @@
 ﻿namespace BootsUI
 {
     partial class BDialogKonto
-    {
+    {// Autor: Daniel Wolff, Edgar Wendler
         /// <summary>
         /// Required designer variable.
         /// </summary>

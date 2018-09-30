@@ -1,7 +1,7 @@
 ﻿using System.Data;
 
 namespace BootsLogik
-{
+{// Autor: Daniel Wolff
 
     // Interface für INDaten
     public interface INDaten

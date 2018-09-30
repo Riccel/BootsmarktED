@@ -25,7 +25,7 @@ namespace BootsmarktED.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Edgar\\Documents\\GitHub\\BootsmarktED\\DataBase\\BootDatabase.accdb")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Windows\\SysWOW64\\DataBase\\BootDatabase.accdb")]
         public string WegDbZugang {
             get {
                 return ((string)(this["WegDbZugang"]));

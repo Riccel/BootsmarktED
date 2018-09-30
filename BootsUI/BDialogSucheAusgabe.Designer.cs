@@ -1,7 +1,7 @@
 ﻿namespace BootsUI
 {
     partial class BDialogSucheAusgabe
-    {
+    {// Autor: Daniel Wolff, Edgar Wendler
         /// <summary>
         /// Required designer variable.
         /// </summary>

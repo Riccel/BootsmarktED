@@ -2,7 +2,7 @@
 {
     using System.Windows.Forms;
     partial class BDialogHaupt
-    {
+    {// Autor: Daniel Wolff, Edgar Wendler
         /// <summary>
         /// Required designer variable.
         /// </summary>

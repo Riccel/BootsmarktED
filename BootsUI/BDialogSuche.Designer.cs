@@ -1,7 +1,7 @@
 ﻿namespace BootsUI
 {
     partial class Suche
-    {
+    {// Autor: Daniel Wolff, Edgar Wendler
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -50,6 +50,7 @@
             // comboBoxLiegeplatz
             // 
             this.comboBoxLiegeplatz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLiegeplatz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxLiegeplatz.FormattingEnabled = true;
             this.comboBoxLiegeplatz.Items.AddRange(new object[] {
             "",
@@ -70,6 +71,7 @@
             // comboBoxMarke
             // 
             this.comboBoxMarke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMarke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMarke.FormattingEnabled = true;
             this.comboBoxMarke.Items.AddRange(new object[] {
             "",
@@ -85,6 +87,7 @@
             // comboBoxBaujahr
             // 
             this.comboBoxBaujahr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBaujahr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxBaujahr.FormattingEnabled = true;
             this.comboBoxBaujahr.Items.AddRange(new object[] {
             "",
@@ -112,6 +115,7 @@
             // comboBoxPreis
             // 
             this.comboBoxPreis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPreis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxPreis.FormattingEnabled = true;
             this.comboBoxPreis.Items.AddRange(new object[] {
             "",
@@ -145,6 +149,7 @@
             // comboBoxMaterial
             // 
             this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMaterial.FormattingEnabled = true;
             this.comboBoxMaterial.Items.AddRange(new object[] {
             "",

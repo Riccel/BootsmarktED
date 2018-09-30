@@ -3,7 +3,7 @@
 namespace BootsLogik
 {
     public interface INBoot
-    {
+    {// Autor: Daniel Wolff
         #region fields
         string Marke { get; set; }
         string Liegeplatz { get; set; }

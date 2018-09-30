@@ -119,15 +119,20 @@
             {
             "Enabled" = "11:TRUE"
             "PromptEnabled" = "11:TRUE"
-            "PrerequisitesLocation" = "2:1"
+            "PrerequisitesLocation" = "2:2"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 und x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Access.Database.Engine.2007"
+                    {
+                    "Name" = "8:Microsoft Access database engine 2007 (x86)"
+                    "ProductCode" = "8:Access.Database.Engine.2007"
                     }
                 }
             }
@@ -154,6 +159,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 und x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -333,12 +351,12 @@
             "SourcePath" = "8:..\\DataBase\\BootDatabase.accdb"
             "TargetName" = "8:BootDatabase.accdb"
             "Tag" = "8:"
-            "Folder" = "8:_B45B4815669546548B756B4E8DB2088B"
+            "Folder" = "8:_54A7B5D6333F4577BD544F40F13F4639"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
             "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
+            "Hidden" = "11:TRUE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
             "SharedLegacy" = "11:FALSE"
@@ -386,17 +404,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B45B4815669546548B756B4E8DB2088B"
-                    {
-                    "Name" = "8:DataBase"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_C9E8341F06C445FEBDE64455216A266D"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_579CA5E9552044C889963747404D4A6E"
@@ -408,6 +415,28 @@
             "Property" = "8:DesktopFolder"
                 "Folders"
                 {
+                }
+            }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_F240BEA4C9154CC09C132D647B55B171"
+            {
+            "Name" = "8:#1914"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:SystemFolder"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_54A7B5D6333F4577BD544F40F13F4639"
+                    {
+                    "Name" = "8:DataBase"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_C9E8341F06C445FEBDE64455216A266D"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -427,7 +456,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Bootsmarkt"
         "ProductCode" = "8:{BB9B9527-860B-4CF5-A887-18D51A4F78D8}"
-        "PackageCode" = "8:{76B1E206-278D-479C-9C5A-C8467FD324C9}"
+        "PackageCode" = "8:{58B6C155-2A44-4BC4-AEB9-A5313BE5AC3F}"
         "UpgradeCode" = "8:{A6FFB0D5-7394-480F-AD8A-31A1ADE098AD}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

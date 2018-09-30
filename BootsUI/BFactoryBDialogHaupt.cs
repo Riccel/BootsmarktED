@@ -1,7 +1,7 @@
 ﻿using BootsLogik;
 
 namespace BootsUI
-{
+{// Autor: Daniel Wolff, Edgar Wendler
     // erbe von INFactoryIDialogHaupt, Über Logik zum Erstellen des Dialogs
     public class BFactoryBDialogHaupt : INFactoryIDialogHaupt
     {

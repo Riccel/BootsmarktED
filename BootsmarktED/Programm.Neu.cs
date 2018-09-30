@@ -7,7 +7,7 @@ using BootsDaten.Datenbankzugang;
 namespace BootsmarktED
 {
     class Programm
-    {
+    {// Autor: Daniel Wolff, Edgar Wendler
 
         #region Fields
         // BootsUI

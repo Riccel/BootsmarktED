@@ -9,3 +9,4 @@ C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsLogik\bin\Debug\BootsL
 C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsLogik\bin\Debug\BootsLogik.pdb
 C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsLogik\obj\Debug\BootsLogik.dll
 C:\Users\Edgar\Desktop\Neuer Ordner (2)\BootsmarktED\BootsLogik\obj\Debug\BootsLogik.pdb
+C:\Users\Edgar\Documents\GitHub\BootsmarktED\BootsLogik\obj\Debug\BootsLogik.csprojResolveAssemblyReference.cache
